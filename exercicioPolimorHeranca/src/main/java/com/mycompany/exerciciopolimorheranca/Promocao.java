@@ -9,5 +9,27 @@ package com.mycompany.exerciciopolimorheranca;
  * @author daviferreira
  */
 public class Promocao {
+    // SuperClasse
+    private String nome;
+    private double valorDesconto;
     
+    public void setNome(String nome){
+        this.nome = nome;
+    }
+    
+    public String getNome(){
+        return this.nome;
+    }
+    
+    public void setValorDesconto(double valorDesconto){
+        this.valorDesconto = valorDesconto;
+    }
+    
+    public double getValorDesconto(){
+        return this.valorDesconto;
+    }
+    
+    public boolean estaAtiva(){
+        return 
+    }
 }
