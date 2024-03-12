@@ -11,6 +11,12 @@ package com.mycompany.exerciciopolimorheranca;
 public class ExercicioPolimorHeranca {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        Venda v = new Venda();
+        
+        Promocao desconto = new PromocaoLimiteData();
+        
+        v.setValor(1000);
+        System.out.println("Valor da Compra: "+v.getValor());
+        System.out.println("Valor da Compra com Desconto: "+v.calcularTotal(desconto));
     }
 }

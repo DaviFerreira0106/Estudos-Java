@@ -10,8 +10,8 @@ package com.mycompany.exerciciopolimorheranca;
  */
 public class Promocao {
     // SuperClasse
-    private String nome;
-    private double valorDesconto;
+    protected String nome;
+    protected double valorDesconto;
     
     public void setNome(String nome){
         this.nome = nome;
@@ -30,6 +30,6 @@ public class Promocao {
     }
     
     public boolean estaAtiva(){
-        return 
+        return true;
     }
 }
