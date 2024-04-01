@@ -4,6 +4,8 @@
     Author     : alunos
 --%>
 
+<%@page import="model.Cliente"%>
+<%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -13,6 +15,17 @@
     </head>
     <body>
         <h1>Atualizar</h1>
-        
+        <%
+            List<Cliente> lcli = (List<Cliente>) request.getAttribute("lcli");
+        %>
+        <table>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Telefone</th>
+            <th>Endereço</th>
+            <th>Editar</th>
+            <th>Excluir</th>
+            
+        </table>
     </body>
 </html>

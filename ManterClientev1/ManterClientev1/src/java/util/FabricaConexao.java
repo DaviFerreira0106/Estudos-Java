@@ -15,7 +15,7 @@ import java.sql.SQLException;
 public class FabricaConexao {
     public static Connection getConexao() throws ClassNotFoundException, SQLException {
         Class.forName("org.postgresql.Driver");
-        Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/aula0405", "postgres", "umc@2023");
+        Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/db_cadastro", "postgres", "postgres");
         
         return con;
     }
