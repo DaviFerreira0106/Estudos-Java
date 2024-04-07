@@ -8,9 +8,11 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Acervo Digital</title>
+        <title>Acervo Digital / Principal</title>
         <link rel="shortcut icon" href="images/favicon.ico" type="image/x-ico">
-        <link rel="stylesheet" href="style/style-pagPrincipal.css"/>
+        <link rel="stylesheet" href="style/style-pagPrincipal-mobile.css"/>
+        <link rel="stylesheet" href="style/style-mediaQuery-principal.css"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     </head>
     <body>
         <header>
@@ -18,10 +20,21 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
         </header>
         <!-- Menu de Navegação -->
         <nav>
-            <a href="#" target="next">Cadastrar</a>
-            <a href="#" target="next">Consultar</a>
-            <a href="#" target="next">Atualizar</a>
-            <a href="#" target="next">Excluir</a>
+            <div id="logotipo">
+                <!<!-- Aqui vai a imagem via CSS -->
+            </div>
+            <p>
+                <a href="#" target="next"><span class="material-symbols-outlined">add_circle</span>Cadastrar</a>
+            </p>
+            <p>
+                <a href="#" target="next"><span class="material-symbols-outlined">density_small</span>Consultar</a>
+            </p>
+            <p>
+                <a href="#" target="next"><span class="material-symbols-outlined">refresh</span>Atualizar</a>
+            </p>
+            <p>
+                <a href="#" target="next"><span class="material-symbols-outlined">delete</span>Excluir</a>
+            </p>
         </nav>
         <main>
             <section id="principal">

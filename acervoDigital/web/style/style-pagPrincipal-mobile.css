@@ -41,7 +41,15 @@ nav {
     box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.4);
 }
 
-nav > a {
+nav > p {
+    display: inline-block;
+}
+
+nav > p > a > span.material-symbols-outlined {
+    display: none;
+}
+
+nav > p > a {
     text-decoration: none;
     color: var(--cor0);
     margin-right: 20px;
@@ -49,7 +57,7 @@ nav > a {
     border-radius: 5px;
 }
 
-nav > a:hover {
+nav > p > a:hover {
     background-color: var(--cor0);
     color: var(--cor4);
 }
