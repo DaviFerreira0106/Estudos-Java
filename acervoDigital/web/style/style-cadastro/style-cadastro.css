@@ -1,0 +1,93 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 7 de abr. de 2024, 18:02:31
+    Author     : daviferreira
+
+Estilo para Página de Cadastro - Mobile 
+*/
+
+@charset "UTF-8";
+
+:root {
+    --cor0: #DFEBF2;
+    --cor1: #99B1BF;
+    --cor2: #356B8C;
+    --cor3: #396273;
+    --cor4: #0D3140;
+    
+    --font-padrao: Arial, Helvetica, Verdana, sans-serif;
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: var(--font-padrao);
+}
+
+body {
+    background-color: var(--cor0);
+}
+
+header {
+    height: 5vh; 
+    background-color: var(--cor2);
+    color: var(--cor0);
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+main {
+    width: 70vw;
+    height: 700px;
+    top: 5vh;
+    margin: auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 40px;
+    margin-top: 30px;
+    box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.1);
+}
+
+div#imagem {
+    display: none;
+}
+
+main > section#formulario > form > p {
+    padding: 7px;
+}
+
+main > section#formulario > form > p > label {
+    display: block;
+}
+
+main > section#formulario > form > p > input {
+    height: 25px;
+    width: 280px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+input[type=submit]{
+    width: 130px;
+    height: 30px;
+    border-radius: 15px;
+    margin-top: 30px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%)
+}
+
+input[type=submit]:hover {
+    background-color: var(--cor4);
+    color: var(--cor0);
+}
+
+
+
+
+
