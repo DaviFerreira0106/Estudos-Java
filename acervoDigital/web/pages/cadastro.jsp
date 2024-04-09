@@ -10,7 +10,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-ico">
-        <link rel="stylesheet" href="../style/style-cadastro/styleCadastro.css">
+        <link rel="stylesheet" type="text/css" href="../style/style cadastro/style_mediaquery.css"/>
+        <link rel="stylesheet" type="text/css" href="../style/style cadastro/styleCadastro.css">
         <title>Acervo Digital / Cadastrar</title>
     </head>
     <body>
@@ -18,8 +19,10 @@
             <h1>Cadastrar Acervo</h1>
         </header>
         <main>
-            <div id="imagem">
-
+            <div id="legenda">
+                <p>
+                    <h3>Cadastre um novo Livro!</h3>
+                </p>
             </div>
             <section id="formulario">
                 <form action="#" method="post" autocomplete="on">

@@ -62,7 +62,7 @@ Estilo para Devices maiores
     }
     
     div#logotipo {
-        background: var(--cor2) url(../images/logotipo.png) no-repeat;
+        background: var(--cor2) url(../..//images/logotipo.png) no-repeat;
         height: 225px;
         display: block;
         background-position: center center;
