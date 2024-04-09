@@ -10,7 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-ico">
-        <link rel="stylesheet" href="../style/style-cadastro/style-cadastro.css">
+        <link rel="stylesheet" href="../style/style-cadastro/styleCadastro.css">
         <title>Acervo Digital / Cadastrar</title>
     </head>
     <body>
@@ -64,7 +64,7 @@
                         <input name="pagina" id="ipagina" type="number" required>
                     </p>
                     <p>
-                        <input type="submit" value="Cadastrar">
+                        <input type="submit" value="Cadastrar" id="btnCadastrar">
                     </p>
                 </form>
             </section>

@@ -3,10 +3,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to c
 Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
 */
 /* 
-    Created on : 7 de abr. de 2024, 18:02:31
+    Created on : 8 de abr. de 2024, 14:04:27
     Author     : daviferreira
-
-Estilo para Página de Cadastro - Mobile 
 */
 
 @charset "UTF-8";
@@ -72,7 +70,7 @@ main > section#formulario > form > p > input {
     border: 1px solid rgba(0, 0, 0, 0.3);
 }
 
-input[type=submit]{
+input#btnCadastrar[type=submit] {
     width: 130px;
     height: 30px;
     border-radius: 15px;
@@ -86,8 +84,5 @@ input[type=submit]:hover {
     background-color: var(--cor4);
     color: var(--cor0);
 }
-
-
-
 
 
