@@ -61,6 +61,7 @@ main > section#formulario > form > p {
 
 main > section#formulario > form > p > label {
     display: block;
+    font-size: 1.1em;
 }
 
 main > section#formulario > form > p > input {
@@ -77,7 +78,8 @@ input#btnCadastrar[type=submit] {
     margin-top: 30px;
     position: absolute;
     left: 50%;
-    transform: translateX(-50%)
+    transform: translateX(-50%);
+    font-size: 1em;
 }
 
 input[type=submit]:hover {

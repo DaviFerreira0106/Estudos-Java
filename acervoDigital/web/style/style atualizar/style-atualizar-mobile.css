@@ -46,6 +46,7 @@ header {
     color: var(--cor0);
     padding: 10px;
     text-align: center;
+    box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.1);
 }
 
 header > h1 {
@@ -54,20 +55,22 @@ header > h1 {
 
 main {
     width: 80vw;
-    height: 630px;
+    height: 880px;
     background-color: white;
     margin: auto;
     margin-bottom: 30px;
     margin-top: 30px;
     padding: 10px;
-    
+    border-radius: 10px;
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.1);
 }
 
 div#imagem {
-    width: 30vw;
-    height: 30vh;
+    width: 135px;
+    height: 174.89px;
     margin: auto;
     background-color: lightgrey;
+    border-radius: 10px;
 }
 
 div#dados {
@@ -78,10 +81,28 @@ div#dados {
 div#dados > form > p > label {
     text-align: center;
     display: block;
+    margin-top: 10px;
+    font-size: 1.1em;
 }
 
 div#dados > form > p > input {
     margin: auto;
     display: block;
+    width: 60vw;
+    height: 25px;
+    border-radius: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+input#btnAtualizar[type=submit] {
+    width: 130px;
+    height: 30px;
+    font-size: 1em;
+    margin-top: 30px;
+}
+
+input#btnAtualizar[type=submit]:hover {
+    background-color: var(--cor4);
+    color: var(--cor0);
 }
 

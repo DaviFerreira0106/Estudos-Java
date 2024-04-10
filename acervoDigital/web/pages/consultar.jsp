@@ -38,7 +38,7 @@
                     </p>
                     <form action="#" method="post">
                         <p id="btnAtualizar">
-                            <input class="button" type="button" value="Atualizar">
+                            <a href="atualizar.jsp"><input class="button" type="button" value="Atualizar"></a>
                         </p> 
                         <p id="btnExcluir">
                             <input class="button" type="button" value="Excluir">
