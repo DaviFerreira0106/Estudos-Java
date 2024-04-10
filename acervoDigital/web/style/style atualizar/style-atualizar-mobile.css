@@ -36,3 +36,52 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
     font-family: var(--font-padrao);
 }
 
+body {
+    background-color: var(--cor0);
+}
+
+header {
+    height: 5vh;
+    background-color: var(--cor2);
+    color: var(--cor0);
+    padding: 10px;
+    text-align: center;
+}
+
+header > h1 {
+    font-size: 5vh;
+}
+
+main {
+    width: 80vw;
+    height: 630px;
+    background-color: white;
+    margin: auto;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    padding: 10px;
+    
+}
+
+div#imagem {
+    width: 30vw;
+    height: 30vh;
+    margin: auto;
+    background-color: lightgrey;
+}
+
+div#dados {
+    padding-top: 10px;
+    margin: auto;
+}
+
+div#dados > form > p > label {
+    text-align: center;
+    display: block;
+}
+
+div#dados > form > p > input {
+    margin: auto;
+    display: block;
+}
+

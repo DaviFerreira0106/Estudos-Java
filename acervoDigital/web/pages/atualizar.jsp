@@ -18,6 +18,9 @@
             <h1>Atualizar Acervo</h1>
         </header>
         <main>
+            <div id="imagem">
+                <!<!-- Aqui vai a Imagem do BD -->
+            </div>
             <div id="dados">
                 <form action="#" method="post" autocomplete="on">
                     <p>
@@ -65,9 +68,7 @@
                     </p>
                 </form>
             </div>
-            <div id="imagem">
-                <!<!-- Aqui vai a Imagem do BD -->
-            </div>
+            
         </main>
     </body>
 </html>
