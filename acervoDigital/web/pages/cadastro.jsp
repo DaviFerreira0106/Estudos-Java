@@ -28,43 +28,43 @@
                 <form action="#" method="post" autocomplete="on">
                     <p>
                         <label for="iid">Id</label>
-                        <input name="id" id="iid" type="number" required min="1">
+                        <input class="campo" name="id" id="iid" type="number" required min="1">
                     </p>
                     <p>
                         <label for="ititulo">Titulo</label>
-                        <input name="titulo" id="ititulo" type="text" required maxlength="20">
+                        <input class="campo" name="titulo" id="ititulo" type="text" required maxlength="20">
                     </p>
                     <p>
                         <label for="ipreco">Preço</label>
-                        <input name="preco" id="ipreco" type="number" required min="1">
+                        <input class="campo" name="preco" id="ipreco" type="number" required min="1">
                     </p>
                     <p>
                         <label for="iautor">Autor</label>
-                        <input name="autor" id="iautor" type="text" required maxlength="30">
+                        <input class="campo" name="autor" id="iautor" type="text" required maxlength="30">
                     </p>
                     <p>
                         <label for="igenero">Genero</label>
-                        <input name="genero" id="igenero" type="text" required maxlength="15">
+                        <input class="campo" name="genero" id="igenero" type="text" required maxlength="15">
                     </p>
                     <p>
                         <label for="ieditora">Editora</label>
-                        <input name="editora" id="ieditora" type="text" required maxlength="15">
+                        <input class="campo" name="editora" id="ieditora" type="text" required maxlength="15">
                     </p>
                     <p>
                         <label for="iidioma">Idioma</label>
-                        <input name="idioma" id="iidioma" type="text" required maxlength="10">
+                        <input class="campo" name="idioma" id="iidioma" type="text" required maxlength="10">
                     </p>
                     <p>
                         <label for="iclassificacao">Classificação Indicativa</label>
-                        <input name="classificacao" id="iclassificacao" type="text" required maxlength="8">
+                        <input class="campo" name="classificacao" id="iclassificacao" type="text" required maxlength="8">
                     </p>
                     <p>
                         <label for="ianoPublicacao">Ano de Publicação</label>
-                        <input name="anoPublicacao" id="ianoPublicacao" type="number" required>
+                        <input class="campo" name="anoPublicacao" id="ianoPublicacao" type="number" required>
                     </p>
                     <p>
                         <label for="ipagina">Número de Páginas</label>
-                        <input name="pagina" id="ipagina" type="number" required>
+                        <input class="campo" name="pagina" id="ipagina" type="number" required>
                     </p>
                     <p>
                         <input type="submit" value="Cadastrar" id="btnCadastrar">

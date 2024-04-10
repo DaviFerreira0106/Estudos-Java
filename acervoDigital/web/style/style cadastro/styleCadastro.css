@@ -65,7 +65,7 @@ main > section#formulario > form > p > label {
 
 main > section#formulario > form > p > input {
     height: 25px;
-    width: 280px;
+    width: 60vw;
     border-radius: 10px;
     border: 1px solid rgba(0, 0, 0, 0.3);
 }

@@ -50,5 +50,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
     section#formulario > form > p {
         text-align: center;
     }
+    
+    main > section#formulario > form > p > input.campo {
+        width: 280px;
+    }
 }
 
