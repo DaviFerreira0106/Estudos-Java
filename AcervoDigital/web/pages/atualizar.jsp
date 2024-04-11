@@ -65,7 +65,7 @@
                         <input class="campo" name="pagina" id="ipagina" type="number">
                     </p>
                     <p>
-                        <input type="submit" value="Atualizar" id="btnAtualizar">
+                        <input type="submit" value="Atualizar" id="btnOperacao" name="btnOperacao">
                     </p>
                 </form>
             </div>

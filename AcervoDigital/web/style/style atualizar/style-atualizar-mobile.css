@@ -94,14 +94,14 @@ div#dados > form > p > input {
     border: 1px solid rgba(0, 0, 0, 0.3);
 }
 
-input#btnAtualizar[type=submit] {
+input#btnOperacao[type=submit] {
     width: 130px;
     height: 30px;
     font-size: 1em;
     margin-top: 30px;
 }
 
-input#btnAtualizar[type=submit]:hover {
+input#btnOperacao[type=submit]:hover {
     background-color: var(--cor4);
     color: var(--cor0);
 }

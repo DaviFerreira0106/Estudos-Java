@@ -41,7 +41,7 @@
                             <a href="atualizar.jsp"><input class="button" type="button" value="Atualizar"></a>
                         </p> 
                         <p id="btnExcluir">
-                            <input class="button" type="button" value="Excluir">
+                            <input class="button" type="submit" value="Excluir" id="btnOperacao" name="btnOperacao">
                         </p>
                     </form>
                 </div>

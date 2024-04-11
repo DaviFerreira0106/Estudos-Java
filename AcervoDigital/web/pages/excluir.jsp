@@ -34,7 +34,7 @@
                             </div>
                         </p>
                         <p>
-                            <input id="buttonExcluir" name="Excluir" type="button" value="Excluir">
+                            <input id="buttonExcluir" name="btnOperacao" type="button" value="Excluir">
                         </p>
                     </div>
                 </form>

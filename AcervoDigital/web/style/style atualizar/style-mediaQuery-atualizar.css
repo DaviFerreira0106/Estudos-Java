@@ -52,7 +52,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
         
     }
     
-    input#btnAtualizar[type=submit]{
+    input#btnOperacao[type=submit]{
         margin-top: 50px;
     }
 }

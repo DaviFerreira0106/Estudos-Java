@@ -4,6 +4,9 @@
  */
 package Controller;
 
+import DAO.LivroDAO;
+import Model.Livro;
+import java.sql.SQLException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -29,12 +32,61 @@ public class LivroServilet extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException{
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             
-            String op = request.getParameter("");
+            /* Variavel que pega a informação passada dos formularios */
+            String get_Parameter = request.getParameter("btnOperacao");
+            
+            /* Variavel para tratamento de mensagem */
+            String message = "";
+            
+            /* Estrutura condicional */
+            if(get_Parameter.equals("Cadastrar")){
+                /* Variaveis para armazenar o valor pego dos input de cadastro */
+                int id = Integer.parseInt(request.getParameter("id"));
+                String titulo = request.getParameter("titulo");
+                double preco = Double.parseDouble(request.getParameter("preco"));
+                String autor = request.getParameter("autor");
+                String genero = request.getParameter("genero");
+                String editora = request.getParameter("editora");
+                String idioma = request.getParameter("idioma");
+                String classificacao = request.getParameter("classificacao");
+                int anoPublicacao = Integer.parseInt(request.getParameter("anoPublicacao"));
+                int numeroPaginas = Integer.parseInt("pagina");
+                
+                /* Criação dos Objetos para efetuar as operações e persistir os dados */
+                Livro objLivro = new Livro();
+                LivroDAO objDAO = new LivroDAO();
+                
+                /* armazenar os dados pegos dos input, nos atributos da classe Livro */
+                objLivro.setId(id);
+                objLivro.setTitulo(titulo);
+                objLivro.setPreco(preco);
+                objLivro.setAutor(autor);
+                objLivro.setGenero(genero);
+                objLivro.setEditora(editora);
+                objLivro.setIdioma(idioma);
+                objLivro.setClassificacaoIndicativa(classificacao);
+                objLivro.setAnoPublicacao(anoPublicacao);
+                objLivro.setNumeroPaginas(numeroPaginas);
+                
+                /* Chamar o objDAO para persistir os dados no banco de dados */
+                try {
+                    objDAO.cadastrar(objLivro);
+                    message = "Livro cadastrado com sucesso!";
+                } catch(ClassNotFoundException | SQLException ex) {
+                    message = "Livro não cadastrado" + ex.getMessage();
+                    System.out.println("Erro: " + ex.getMessage());
+                }
+                
+                /* Armazenar a mensagem de cadastro na memoria do servidor / computador e passar ela para a pagina de resposta */
+                request.setAttribute("message", message);
+                request.getRequestDispatcher("/respostaTemp.jsp").forward(request, response);
+                
+            }
         }
     }
 

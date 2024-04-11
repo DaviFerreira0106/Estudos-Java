@@ -1,10 +1,3 @@
-<%-- 
-    Document   : cadastro
-    Created on : 7 de abr. de 2024, 16:24:50
-    Author     : daviferreira
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="pt-BR">
     <head>
@@ -25,7 +18,7 @@
                 </p>
             </div>
             <section id="formulario">
-                <form action="#" method="post" autocomplete="on">
+                <form name="formCad" action="LivroServilet" method="post" autocomplete="on">
                     <p>
                         <label for="iid">Id</label>
                         <input class="campo" name="id" id="iid" type="number" required min="1">
@@ -67,7 +60,7 @@
                         <input class="campo" name="pagina" id="ipagina" type="number" required>
                     </p>
                     <p>
-                        <input type="submit" value="Cadastrar" id="btnCadastrar">
+                        <input type="submit" value="Cadastrar" id="btnOperacao" name="btnOperacao">
                     </p>
                 </form>
             </section>
