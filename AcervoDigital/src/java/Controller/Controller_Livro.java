@@ -55,7 +55,7 @@ public class Controller_Livro extends HttpServlet {
                 String idioma = request.getParameter("idioma");
                 String classificacao = request.getParameter("classificacao");
                 int anoPublicacao = Integer.parseInt(request.getParameter("anoPublicacao"));
-                int numeroPaginas = Integer.parseInt("pagina");
+                int numeroPaginas = Integer.parseInt(request.getParameter("pagina"));
                 
                 /* Criação dos Objetos para efetuar as operações e persistir os dados */
                 Livro objLivro = new Livro();
