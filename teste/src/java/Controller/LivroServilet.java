@@ -32,84 +32,9 @@ public class LivroServilet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            private static final long serialVersionUID = 1L;
-            private LivroController livroController;
-
-            public LivroServlet() {
-                super();
-                livroController = new LivroController();
-            }
-
-            protected void doGet(HttpServletRequest request, HttpServletResponse response)
-                    throws ServletException, IOException {
-                String action = request.getParameter("action");
-
-                if (action == null) {
-                    action = "listar";
-                }
-
-                switch (action) {
-                    case "listar":
-                        listarLivros(request, response);
-                        break;
-                    case "adicionar":
-                        adicionarLivro(request, response);
-                        break;
-                    case "remover":
-                        removerLivro(request, response);
-                        break;
-                    // Adicione mais casos para outras ações conforme necessário
-                    default:
-                        listarLivros(request, response);
-                        break;
-                }
-            }
-
-            protected void doPost(HttpServletRequest request, HttpServletResponse response)
-                    throws ServletException, IOException {
-                doGet(request, response);
-            }
-
-            private void listarLivros(HttpServletRequest request, HttpServletResponse response)
-                    throws ServletException, IOException {
-                List<Livro> livros = livroController.consultarTodosLivros();
-                request.setAttribute("livros", livros);
-                request.getRequestDispatcher("listagemLivros.jsp").forward(request, response);
-            }
-
-            private void adicionarLivro(HttpServletRequest request, HttpServletResponse response)
-                    throws ServletException, IOException {
-                // Obter parâmetros do formulário
-                int id = Integer.parseInt(request.getParameter("id"));
-                String titulo = request.getParameter("titulo");
-                double preco = Double.parseDouble(request.getParameter("preco"));
-                String autor = request.getParameter("autor");
-                String genero = request.getParameter("genero");
-                String editora = request.getParameter("editora");
-                String idioma = request.getParameter("idioma");
-                String classificacaoIndicativa = request.getParameter("classificacaoIndicativa");
-                int anoPublicacao = Integer.parseInt(request.getParameter("anoPublicacao"));
-                int numeroPaginas = Integer.parseInt(request.getParameter("numeroPaginas"));
-
-                // Inserir livro
-                livroController.inserirLivro(id, titulo, preco, autor, genero, editora, idioma, classificacaoIndicativa,
-                        anoPublicacao, numeroPaginas);
-
-                // Redirecionar para a página de listagem de livros
-                listarLivros(request, response);
-            }
-
-            private void removerLivro(HttpServletRequest request, HttpServletResponse response)
-                    throws ServletException, IOException {
-                // Obter ID do livro a ser removido
-                int id = Integer.parseInt(request.getParameter("id"));
-
-                // Remover livro
-                livroController.deletarLivro(id);
-
-                // Redirecionar para a página de listagem de livros
-                listarLivros(request, response);
-            }
+            /* TODO output your page here. You may use following sample code. */
+            
+            String op = request.getParameter("");
         }
     }
 
