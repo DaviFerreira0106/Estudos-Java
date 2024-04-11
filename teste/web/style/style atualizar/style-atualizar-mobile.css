@@ -1,0 +1,108 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 10 de abr. de 2024, 00:53:13
+    Author     : daviferreira
+*/
+
+/* 
+    Typical Devices Breakpoint 29/01/2024 - W3C
+
+    - Dispositivos extra pequenos: até 600px
+    - Tablets em retrato e celulares: 600px até 768px
+    - Tablets em Paisagem: 768px até 992px
+    - Laptops/Desktps: 992px até 1200px
+    - Laptops/Desktops grandes: 1200px para cima
+
+*/
+
+@charset "UTF-8";
+
+:root {
+    --cor0: #DFEBF2;
+    --cor1: #99B1BF;
+    --cor2: #356B8C;
+    --cor3: #396273;
+    --cor4: #0D3140;
+    
+    --font-padrao: Arial, Helvetica, Verdana, sans-serif;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: var(--font-padrao);
+}
+
+body {
+    background-color: var(--cor0);
+}
+
+header {
+    height: 5vh;
+    background-color: var(--cor2);
+    color: var(--cor0);
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.1);
+}
+
+header > h1 {
+    font-size: 5vh;
+}
+
+main {
+    width: 80vw;
+    height: 880px;
+    background-color: white;
+    margin: auto;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.1);
+}
+
+div#imagem {
+    width: 135px;
+    height: 174.89px;
+    margin: auto;
+    background-color: lightgrey;
+    border-radius: 10px;
+}
+
+div#dados {
+    padding-top: 10px;
+    margin: auto;
+}
+
+div#dados > form > p > label {
+    text-align: center;
+    display: block;
+    margin-top: 10px;
+    font-size: 1.1em;
+}
+
+div#dados > form > p > input {
+    margin: auto;
+    display: block;
+    width: 60vw;
+    height: 25px;
+    border-radius: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+input#btnOperacao[type=submit] {
+    width: 130px;
+    height: 30px;
+    font-size: 1em;
+    margin-top: 30px;
+}
+
+input#btnOperacao[type=submit]:hover {
+    background-color: var(--cor4);
+    color: var(--cor0);
+}
+
