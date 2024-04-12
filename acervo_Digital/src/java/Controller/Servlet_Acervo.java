@@ -6,9 +6,9 @@ package Controller;
 
 import DAO.LivroDAO;
 import Model.Livro;
-import java.sql.SQLException;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -19,8 +19,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author daviferreira
  */
-@WebServlet(name = "Controller_Livro", urlPatterns = {"/Controller_Livro"})
-public class Controller_Livro extends HttpServlet {
+@WebServlet(name = "Servlet_Acervo", urlPatterns = {"/Servlet_Acervo"})
+public class Servlet_Acervo extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,7 +32,7 @@ public class Controller_Livro extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException{
+            throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
@@ -55,7 +55,7 @@ public class Controller_Livro extends HttpServlet {
                 String idioma = request.getParameter("idioma");
                 String classificacao = request.getParameter("classificacao");
                 int anoPublicacao = Integer.parseInt(request.getParameter("anoPublicacao"));
-                int numeroPaginas = Integer.parseInt("pagina");
+                int numeroPaginas = Integer.parseInt(request.getParameter("pagina"));
                 
                 /* Criação dos Objetos para efetuar as operações e persistir os dados */
                 Livro objLivro = new Livro();
@@ -85,7 +85,6 @@ public class Controller_Livro extends HttpServlet {
                 /* Armazenar a mensagem de cadastro na memoria do servidor / computador e passar ela para a pagina de resposta */
                 request.setAttribute("message", message);
                 request.getRequestDispatcher("/respostaTemp.jsp").forward(request, response);
-                
             }
         }
     }

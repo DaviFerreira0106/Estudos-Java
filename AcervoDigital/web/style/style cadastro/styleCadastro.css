@@ -71,7 +71,7 @@ main > section#formulario > form > p > input {
     border: 1px solid rgba(0, 0, 0, 0.3);
 }
 
-input#btnOperacao[type=submit] {
+input#btnCadastrar[type=submit] {
     width: 130px;
     height: 30px;
     border-radius: 15px;
