@@ -68,18 +68,24 @@ Estilo para Devices maiores
         background-position: center center;
     }
     
-    nav > p {
+    nav > form > p {
       display: block;  
     }
     
-    nav > p > a > span.material-symbols-outlined {
+    nav > form > p > a > span.material-symbols-outlined {
         display: inline-block;
         margin-right: 15px;
     }
     
-    nav > p > a {
+    nav > form > p > a {
         display: inline-block;
         width: 200px;
+    }
+    
+    nav > form > p > input {
+        display: inline-block;
+        width: 200px;
+        margin-bottom: 20px;
     }
     
     main {

@@ -9,6 +9,8 @@ import Model.Livro;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -85,6 +87,44 @@ public class Servlet_Acervo extends HttpServlet {
                 /* Armazenar a mensagem de cadastro na memoria do servidor / computador e passar ela para a pagina de resposta */
                 request.setAttribute("message", message);
                 request.getRequestDispatcher("/respostaTemp.jsp").forward(request, response);
+            }else if(get_Parameter.equals("Excluir")){
+                /* Variavel que pega o ID do formulario */
+                int get_ParameterById = Integer.parseInt(request.getParameter("iid"));
+
+                Livro objLivro = new Livro();
+                LivroDAO objDAO = new LivroDAO();
+
+                objLivro.setId(get_ParameterById);
+
+                try {
+                    objDAO.deletar(objLivro);
+                    message = "EXCLUÍDO COM SUCESSO";
+                } catch (ClassNotFoundException | SQLException ex) {
+                    message = "EXCLUSÃO NÃO REALIZADO: " + ex.getMessage();
+                    System.out.println("Erro: " + ex.getMessage());
+                }
+                
+                request.setAttribute("message", message);
+                request.getRequestDispatcher("/resultadodeletar.jsp").forward(request, response);
+            }else if(get_Parameter.equals("Consultar")){
+                
+                /* Criação do objeto de acesso ao Banco de Dados */
+                LivroDAO objDAO = new LivroDAO();
+                
+                /* Criação de objeto Lista para armazenar os dados do obj trazidos do BD */
+                List<Livro> objLista = new ArrayList<>();
+                
+                /* Chamar o objeto lista para que os valores do objDAO sejam armazenados na lista */
+                try {
+                    objLista = objDAO.consultarTodos();
+                } catch(ClassNotFoundException | SQLException ex){
+                    message = "Erro" + ex.getMessage();
+                    out.println("Erro" + message);
+                }
+                
+                /* Armazenar a mensagem de cadastro na memoria do servidor / computador e passar ela para a pagina de resposta */
+                request.setAttribute("message", message);
+                request.getRequestDispatcher("/consultar.jsp").forward(request, response);
             }
         }
     }

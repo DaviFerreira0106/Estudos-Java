@@ -69,6 +69,13 @@ div#dados {
     display: block;
 }
 
+div#linha > form > div#dados > input {
+    margin: 10px;
+    height: 20px;
+    width: 130px;
+    border-radius: 10px;
+}
+
 div#imagem {
     width: 200px;
     height: 300px;

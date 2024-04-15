@@ -21,20 +21,28 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
         <!-- Menu de Navegação -->
         <nav>
             <div id="logotipo">
-                <!<!-- Aqui vai a imagem via CSS -->
+                <!-- Aqui vai a imagem via CSS -->
             </div>
-            <p>
-                <a href="cadastro.html" target="_self"><span class="material-symbols-outlined">add_circle</span>Cadastrar</a>
-            </p>
-            <p>
-                <a href="pages/consultar.jsp" target="_self"><span class="material-symbols-outlined">density_small</span>Consultar</a>
-            </p>
-            <p>
-                <a href="pages/atualizar.jsp" target="_self"><span class="material-symbols-outlined">refresh</span>Atualizar</a>
-            </p>
-            <p>
-                <a href="pages/excluir.jsp" target="_self"><span class="material-symbols-outlined">delete</span>Excluir</a>
-            </p>
+            <form action="Servlet_Acervo" method="post">
+                <p>
+                   <input type="submit" name="btnOperacao" value="Consultar">
+                </p>
+                <p>
+                    <a href="cadastro.html" target="_self"><span class="material-symbols-outlined">add_circle</span>Cadastrar</a>
+                </p>
+                <!--
+                <p>
+                    <a href="pages/consultar.jsp" target="_self"><span class="material-symbols-outlined">density_small</span>Consultar</a>
+                </p>
+                -->
+                <p>
+                    <a href="atualizar.jsp" target="_self"><span class="material-symbols-outlined">refresh</span>Atualizar</a>
+                </p>
+                <p>
+                    <a href="excluir.jsp" target="_self"><span class="material-symbols-outlined">delete</span>Excluir</a>
+                </p>
+                
+            </form>
         </nav>
         <main>
             <section id="principal">

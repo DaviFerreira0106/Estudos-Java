@@ -41,15 +41,19 @@ nav {
     box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.4);
 }
 
-nav > p {
+nav > form > p {
     display: inline-block;
 }
 
-nav > p > a > span.material-symbols-outlined {
+nav > form > p > a > span.material-symbols-outlined {
     display: none;
 }
 
-nav > p > a {
+nav > form > p > span.material-symbols-outlined {
+    display: none;
+}
+
+nav > form > p > a {
     text-decoration: none;
     color: var(--cor0);
     margin-right: 20px;
@@ -57,7 +61,22 @@ nav > p > a {
     border-radius: 5px;
 }
 
-nav > p > a:hover {
+nav > form > p > input {
+    background-color: var(--cor2);
+    color: var(--cor0);
+    border: none;
+    margin-right: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+nav > form > p > a:hover {
+    background-color: var(--cor0);
+    color: var(--cor4);
+}
+
+nav > form > p > input:hover {
     background-color: var(--cor0);
     color: var(--cor4);
 }
