@@ -67,7 +67,12 @@
                 </div>
                         <%}}else{%>
                     <h2 id="txtcodigo">Não há Livros Cadastrados!</h2>
-                    <img id="imagemSemCadastro" src="images/sem-cadastro300px.png" alt="Sem Livros cadastrados">
+                    <div id="imagem_sem_cadastro"> 
+                        <picture>
+                            <source media="(max-width: 900px)" srcset="images/sem-cadastro200px.png" type="image/png">
+                            <img id="image" src="images/sem-cadastro300px.png" alt="Sem Livros cadastrados">
+                        </picture>
+                    </div>
                     <%}%>
             </div>
         </main>

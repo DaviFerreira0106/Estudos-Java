@@ -63,6 +63,11 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
         width: 100px;
         transform: translateX(-90%)
     }
+    
+    img#image {
+        position: absolute;
+        transform: translate(10%, 10%);
+    }
 }
 
 @media screen and (min-width: 992px){
@@ -80,5 +85,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
     
     input.button {
         transform: translateX(-100%);
+    }
+    
+    img#image {
+        position: absolute;
+        transform: translate(10%, 10%);
     }
 }

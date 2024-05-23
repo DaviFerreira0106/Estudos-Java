@@ -111,10 +111,23 @@ input.button:hover {
 h2#txtcodigo {
     text-align: center;
     padding: 20px;
+    color: var(--cor4);
 }
 
 img#imagemSemCadastro {
     background-position: center;
+}
+
+div#imagem_sem_cadastro {
+    width: 350px;
+    height: 350px;
+    margin: auto;
+    
+}
+
+img#image {
+    position: absolute;
+    transform: translate(30%, 8%);
 }
 
 
