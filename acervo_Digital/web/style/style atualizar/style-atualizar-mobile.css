@@ -106,3 +106,24 @@ input#btnOperacao[type=submit]:hover {
     color: var(--cor0);
 }
 
+input#iid {
+    display: block;
+    margin: auto;
+    width: 130px;
+    height: 25px;
+    border-radius: 15px;
+    margin-top: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+h2#txtcodigo {
+    text-align: center;
+}
+
+input.id {
+    display: block;
+    margin: auto;
+    border-radius: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+

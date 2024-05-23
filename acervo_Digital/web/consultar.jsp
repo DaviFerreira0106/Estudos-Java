@@ -11,7 +11,7 @@
 <html lang="pt-BR">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-ico">
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-ico">
         <link rel="stylesheet" type="text/css" href="style/style consultar/style-consultar-mobile.css">
         <link rel="stylesheet" type="text/css" href="style/style consultar/style-mediaQuery-consultar.css">
         <title>Acervo Digital / Consultar</title>
@@ -20,13 +20,16 @@
     <body>
         <% 
             /* Criação de objeto lista, para pegar atributos armazenados na memoria pela servlet */
-            List<Livro> objListaLivro = (List<Livro>) request.getAttribute("message");
+            List<Livro> objListaLivro = (List<Livro>) request.getAttribute("lista");
         %>
         <main>
+            <%
+                if(!objListaLivro.isEmpty()){ 
+            %>
             <div id="linha">
                 <%
                     /* Criação de estrutura de repetição para dados armazenados na lista */
-                    for(Livro objLivro : objListaLivro) {
+                    for(Livro objLivro : objListaLivro){
                 %>
                 <div id="foto">
                     
@@ -58,13 +61,14 @@
                             <a href="atualizar.jsp"><input class="button" type="button" value="Atualizar"></a>
                         </p> 
                         <p id="btnExcluir">
-                            <input class="button" type="submit" value="Excluir" id="btnOperacao" name="btnOperacao">
+                            <a href="excluir.jsp"><input class="button" type="button" value="Excluir"></a>
                         </p>
                     </form>
                 </div>
-                <%
-                    }
-                %>
+                        <%}}else{%>
+                    <h2 id="txtcodigo">Não há Livros Cadastrados!</h2>
+                    <img id="imagemSemCadastro" src="images/sem-cadastro300px.png" alt="Sem Livros cadastrados">
+                    <%}%>
             </div>
         </main>
     </body>

@@ -28,7 +28,10 @@
             <div id="linha">
                 <form id="formulario" action="Servlet_Acervo" method="post">
                     <div id="dados">
-                        <input type="text" name="iid">
+                        <p>
+                            
+                            <input id="codigo" type="text" name="iid" placeholder=" Código do Livro">
+                        </p>
                         <p>
                             <div id="imagem">
                                 <!-- Aqui vai a Imagem -->

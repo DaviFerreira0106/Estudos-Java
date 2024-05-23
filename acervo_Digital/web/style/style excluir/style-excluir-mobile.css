@@ -69,11 +69,14 @@ div#dados {
     display: block;
 }
 
-div#linha > form > div#dados > input {
+div#linha > form > div#dados > p > input#codigo {
     margin: 10px;
     height: 20px;
     width: 130px;
     border-radius: 10px;
+    display: block;
+    margin: auto;
+    border: 1px solid rgba(0, 0, 0, 0.3);
 }
 
 div#imagem {
@@ -82,6 +85,7 @@ div#imagem {
     background-color: lightgray;
     border-radius: 10px;
     margin: auto;
+    margin-top: 20px;
     margin-bottom: 20px;
 }
 

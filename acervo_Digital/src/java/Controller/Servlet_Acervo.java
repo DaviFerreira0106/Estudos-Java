@@ -123,8 +123,22 @@ public class Servlet_Acervo extends HttpServlet {
                 }
                 
                 /* Armazenar a mensagem de cadastro na memoria do servidor / computador e passar ela para a pagina de resposta */
-                request.setAttribute("message", message);
+                request.setAttribute("lista", objLista);
                 request.getRequestDispatcher("/consultar.jsp").forward(request, response);
+            }else if(get_Parameter.equals("Atualizar")){
+                /* variavel que receberá o id */
+                int id = Integer.parseInt(request.getParameter("id"));
+                
+                Livro l = new Livro();
+                LivroDAO ldao = new LivroDAO();
+                l.setId(id);
+                try {
+                    l = ldao.consultarporId(l);
+                    request.setAttribute("l", l);
+                    request.getRequestDispatcher("/atualizar.jsp").forward(request, response);
+                } catch (ClassNotFoundException | SQLException ex) {
+                    System.out.println("Erro ClassNotFound: " + ex.getMessage());
+                }
             }
         }
     }

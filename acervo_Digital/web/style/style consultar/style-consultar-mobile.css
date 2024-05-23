@@ -108,5 +108,14 @@ input.button:hover {
     color: var(--cor0);
 }
 
+h2#txtcodigo {
+    text-align: center;
+    padding: 20px;
+}
+
+img#imagemSemCadastro {
+    background-position: center;
+}
+
 
 
