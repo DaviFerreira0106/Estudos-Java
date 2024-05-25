@@ -55,5 +55,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
     input#btnOperacao[type=submit]{
         margin-top: 50px;
     }
+    
+    img#image {
+        position: absolute;
+        transform: translate(10%, 10%);
+    }
 }
 

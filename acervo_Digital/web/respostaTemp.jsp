@@ -10,6 +10,9 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <script>
+            window.alert(message);
+        </script>
     </head>
     <body>
         <h1>Resultado Cadastro!</h1>
@@ -18,6 +21,8 @@
                 String message = (String) request.getAttribute("message");
                 out.println(message);
             %>
+            
         </h2>
+        
     </body>
 </html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shorcut icon" href="images/favicon.ico" type="image/x-ico">
+        <link rel="stylesheet" type="text/css" href="style/style atualizar/style-atualizar-mobile.css">
+        <link rel="stylesheet" type="text/css" href="style/style atualizar/style-mediaQuery-atualizar.css">
+        <title>Acervo Digital / Atualizar por Código</title>
+    </head>
+    <body>
+        <header>
+            <h1>Atualizar Acervo</h1>
+        </header>
+        <main>
+            <h2 id="txtcodigo">Digite o Código do Livro.</h2>
+            <form id="pesquisa" action="Servlet_Acervo" method="post">
+                <p>
+                    <input class="campo" name="id" id="iid" type="number" placeholder=" Código" required>
+                </p>
+                <p>
+                    <button type="submit" value="ConsultarID" id="btnOperacao" name="btnOperacao">Consultar</button>
+                </p>
+                
+            </form>
+        </main>
+    </body>
+</html>

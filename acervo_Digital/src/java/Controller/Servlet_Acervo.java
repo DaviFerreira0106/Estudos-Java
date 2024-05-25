@@ -125,20 +125,41 @@ public class Servlet_Acervo extends HttpServlet {
                 /* Armazenar a mensagem de cadastro na memoria do servidor / computador e passar ela para a pagina de resposta */
                 request.setAttribute("lista", objLista);
                 request.getRequestDispatcher("/consultar.jsp").forward(request, response);
-            }else if(get_Parameter.equals("Atualizar")){
-                /* variavel que receberá o id */
-                int id = Integer.parseInt(request.getParameter("id"));
-                
-                Livro l = new Livro();
-                LivroDAO ldao = new LivroDAO();
-                l.setId(id);
-                try {
-                    l = ldao.consultarporId(l);
-                    request.setAttribute("l", l);
-                    request.getRequestDispatcher("/atualizar.jsp").forward(request, response);
-                } catch (ClassNotFoundException | SQLException ex) {
-                    System.out.println("Erro ClassNotFound: " + ex.getMessage());
+            }else if(get_Parameter.equals("ConsultarID")){
+                /* Verifica se o id virá nulo da tela de atualizar*/
+                if(request.getParameter("id") != null){
+                    /* variavel que receberá o id */
+                    int id = Integer.parseInt(request.getParameter("id"));
+                    
+                    Livro objLivro = new Livro();
+                    LivroDAO objDao = new LivroDAO();
+                    objLivro.setId(id);
+                    try {
+                        objLivro = objDao.consultarporId(objLivro);
+                        request.setAttribute("objLivro", objLivro);
+                        request.getRequestDispatcher("/atualizar.jsp").forward(request, response);
+                    } catch (ClassNotFoundException | SQLException ex) {
+                        System.out.println("Erro ClassNotFound: " + ex.getMessage());
+                    }
+                }else {
+                    /*variavel que receberá o id da tela de consultar*/
+                   Livro objLivroId = (Livro) request.getAttribute("objLivroParameter"); 
+                   
+                    Livro objLivro = new Livro();
+                    LivroDAO objDao = new LivroDAO();
+                    objLivro.setId(objLivroId.getId());
+                    try {
+                        objLivro = objDao.consultarporId(objLivro);
+                        request.setAttribute("objLivro", objLivro);
+                        request.getRequestDispatcher("/atualizar.jsp").forward(request, response);
+                    } catch (ClassNotFoundException | SQLException ex) {
+                       System.out.println("Erro ClassNotFound: " + ex.getMessage());
+                    }
                 }
+                
+                
+                
+                
             }
         }
     }

@@ -55,7 +55,7 @@ header > h1 {
 
 main {
     width: 80vw;
-    height: 880px;
+    /*height: 880px;*/
     background-color: white;
     margin: auto;
     margin-bottom: 30px;
@@ -101,7 +101,27 @@ input#btnOperacao[type=submit] {
     margin-top: 30px;
 }
 
+input#desabilitado {
+    display: none;
+}
+
 input#btnOperacao[type=submit]:hover {
+    background-color: var(--cor4);
+    color: var(--cor0);
+}
+
+button#btnOperacao {
+    margin: auto;
+    display: block;
+    width: 130px;
+    height: 30px;
+    font-size: 1em;
+    margin-top: 30px;
+    border-radius: 15px;
+    border: 1px solid black;
+}
+
+button#btnOperacao:hover{
     background-color: var(--cor4);
     color: var(--cor0);
 }
@@ -118,6 +138,8 @@ input#iid {
 
 h2#txtcodigo {
     text-align: center;
+    padding: 20px;
+    color: var(--cor4);
 }
 
 input.id {
@@ -125,5 +147,21 @@ input.id {
     margin: auto;
     border-radius: 15px;
     border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+img#imagemSemCadastro {
+    background-position: center;
+}
+
+div#imagem_sem_cadastro {
+    width: 350px;
+    height: 350px;
+    margin: auto;
+    
+}
+
+img#image {
+    position: absolute;
+    transform: translate(30%, 8%);
 }
 

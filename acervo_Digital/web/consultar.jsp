@@ -58,21 +58,25 @@
                     
                     <form action="Servlet_Acervo" method="post">
                         <p id="btnAtualizar">
-                            <a href="atualizar.jsp"><input class="button" type="button" value="Atualizar"></a>
+                            <%
+                                request.setAttribute("objLivroParameter", objLivro.getId());
+                                request.getRequestDispatcher("Servlet_Acervo").forward(request, response);
+                            %>
+                            <button class="button" type="submit" value="ConsultarID"  name="btnOperacao">Atualizar</button>
                         </p> 
                         <p id="btnExcluir">
                             <a href="excluir.jsp"><input class="button" type="button" value="Excluir"></a>
                         </p>
                     </form>
                 </div>
-                        <%}}else{%>
-                    <h2 id="txtcodigo">Não há Livros Cadastrados!</h2>
-                    <div id="imagem_sem_cadastro"> 
-                        <picture>
-                            <source media="(max-width: 900px)" srcset="images/sem-cadastro200px.png" type="image/png">
-                            <img id="image" src="images/sem-cadastro300px.png" alt="Sem Livros cadastrados">
-                        </picture>
-                    </div>
+                    <%}}else{%>
+                        <h2 id="txtcodigo">Não há Livros Cadastrados!</h2>
+                        <div id="imagem_sem_cadastro"> 
+                            <picture>
+                                <source media="(max-width: 900px)" srcset="images/sem-cadastro200px.png" type="image/png">
+                                <img id="image" src="images/sem-cadastro300px.png" alt="Sem Livros cadastrados">
+                            </picture>
+                        </div>
                     <%}%>
             </div>
         </main>
