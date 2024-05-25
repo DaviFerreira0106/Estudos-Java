@@ -58,10 +58,7 @@
                     
                     <form action="Servlet_Acervo" method="post">
                         <p id="btnAtualizar">
-                            <%
-                                request.setAttribute("objLivroParameter", objLivro.getId());
-                                request.getRequestDispatcher("Servlet_Acervo").forward(request, response);
-                            %>
+                            <input type="hidden" name="<%objLivro.getId();%>">
                             <button class="button" type="submit" value="ConsultarID"  name="btnOperacao">Atualizar</button>
                         </p> 
                         <p id="btnExcluir">
