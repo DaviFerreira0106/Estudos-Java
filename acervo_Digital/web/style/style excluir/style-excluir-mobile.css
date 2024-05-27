@@ -40,20 +40,34 @@ header {
 
 main {
     width: 100vw;
-    height: 100vh;
-    background-color: var(--cor0)
+    background-color: var(--cor0);
+    padding-top: 20px;
 }
 
 main > form > p > label {
-    display: inline-block;
+    display: none;
 }
 
 main > form > p > input {
-    display: inline-block;
+    display: block;
     width: 50vw;
     height: 35px;
     border-radius: 20px;
     border: 1px solid rgba(0, 0, 0, 0.3);
+    transform: translateX(50%)
+}
+
+button#btnOperacao {
+    height: 35px;
+    width: 130px;
+    font-size: 1em;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+button#btnOperacao:hover {
+    background-color: var(--cor4);
+    color: var(--cor0);
 }
 
 form#pesquisa {
@@ -62,6 +76,8 @@ form#pesquisa {
 }
 
 div#linha {
+    margin-top: 50px;
+    padding-top: 20px;
     display: block;
 }
 

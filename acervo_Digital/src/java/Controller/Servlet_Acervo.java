@@ -38,15 +38,15 @@ public class Servlet_Acervo extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            
-            /* Variavel que pega a informação passada dos formularios */
+
+ /* Variavel que pega a informação passada dos formularios */
             String get_Parameter = request.getParameter("btnOperacao");
-            
+
             /* Variavel para tratamento de mensagem */
             String message = "";
-            
+
             /* Estrutura condicional */
-            if(get_Parameter.equals("Cadastrar")){
+            if (get_Parameter.equals("Cadastrar")) {
                 /* Variaveis para armazenar o valor pego dos input de cadastro */
                 int id = Integer.parseInt(request.getParameter("id"));
                 String titulo = request.getParameter("titulo");
@@ -58,11 +58,11 @@ public class Servlet_Acervo extends HttpServlet {
                 String classificacao = request.getParameter("classificacao");
                 int anoPublicacao = Integer.parseInt(request.getParameter("anoPublicacao"));
                 int numeroPaginas = Integer.parseInt(request.getParameter("pagina"));
-                
+
                 /* Criação dos Objetos para efetuar as operações e persistir os dados */
                 Livro objLivro = new Livro();
                 LivroDAO objDAO = new LivroDAO();
-                
+
                 /* armazenar os dados pegos dos input, nos atributos da classe Livro */
                 objLivro.setId(id);
                 objLivro.setTitulo(titulo);
@@ -74,20 +74,20 @@ public class Servlet_Acervo extends HttpServlet {
                 objLivro.setClassificacaoIndicativa(classificacao);
                 objLivro.setAnoPublicacao(anoPublicacao);
                 objLivro.setNumeroPaginas(numeroPaginas);
-                
+
                 /* Chamar o objDAO para persistir os dados no banco de dados */
                 try {
                     objDAO.cadastrar(objLivro);
                     message = "Livro cadastrado com sucesso!";
-                } catch(ClassNotFoundException | SQLException ex) {
+                } catch (ClassNotFoundException | SQLException ex) {
                     message = "Livro não cadastrado" + ex.getMessage();
                     System.out.println("Erro: " + ex.getMessage());
                 }
-                
+
                 /* Armazenar a mensagem de cadastro na memoria do servidor / computador e passar ela para a pagina de resposta */
                 request.setAttribute("message", message);
                 request.getRequestDispatcher("/respostaTemp.jsp").forward(request, response);
-            }else if(get_Parameter.equals("Excluir")){
+            } else if (get_Parameter.equals("Excluir")) {
                 /* Variavel que pega o ID do formulario */
                 int get_ParameterById = Integer.parseInt(request.getParameter("iid"));
 
@@ -103,62 +103,81 @@ public class Servlet_Acervo extends HttpServlet {
                     message = "EXCLUSÃO NÃO REALIZADO: " + ex.getMessage();
                     System.out.println("Erro: " + ex.getMessage());
                 }
-                
+
                 request.setAttribute("message", message);
                 request.getRequestDispatcher("/resultadodeletar.jsp").forward(request, response);
-            }else if(get_Parameter.equals("Consultar")){
-                
+            } else if (get_Parameter.equals("Consultar")) {
+
                 /* Criação do objeto de acesso ao Banco de Dados */
                 LivroDAO objDAO = new LivroDAO();
-                
+
                 /* Criação de objeto Lista para armazenar os dados do obj trazidos do BD */
                 List<Livro> objLista = new ArrayList<>();
-                
+
                 /* Chamar o objeto lista para que os valores do objDAO sejam armazenados na lista */
                 try {
                     objLista = objDAO.consultarTodos();
-                } catch(ClassNotFoundException | SQLException ex){
+                } catch (ClassNotFoundException | SQLException ex) {
                     message = "Erro" + ex.getMessage();
                     out.println("Erro" + message);
                 }
-                
+
                 /* Armazenar a mensagem de cadastro na memoria do servidor / computador e passar ela para a pagina de resposta */
                 request.setAttribute("lista", objLista);
                 request.getRequestDispatcher("/consultar.jsp").forward(request, response);
-            }else if(get_Parameter.equals("ConsultarID")){
-                /* Verifica se o id virá nulo da tela de atualizar*/
-                if(request.getParameter("id") != null){
-                    /* variavel que receberá o id */
-                    int id = Integer.parseInt(request.getParameter("id"));
-                    
-                    Livro objLivro = new Livro();
-                    LivroDAO objDao = new LivroDAO();
-                    objLivro.setId(id);
-                    try {
-                        objLivro = objDao.consultarporId(objLivro);
-                        request.setAttribute("objLivro", objLivro);
-                        request.getRequestDispatcher("/atualizar.jsp").forward(request, response);
-                    } catch (ClassNotFoundException | SQLException ex) {
-                        System.out.println("Erro ClassNotFound: " + ex.getMessage());
-                    }
-                }else {
-                    /*variavel que receberá o id da tela de consultar*/
-                   Livro objLivroId = (Livro) request.getAttribute("objLivroParameter"); 
-                   
-                    Livro objLivro = new Livro();
-                    LivroDAO objDao = new LivroDAO();
-                    objLivro.setId(objLivroId.getId());
-                    try {
-                        objLivro = objDao.consultarporId(objLivro);
-                        request.setAttribute("objLivro", objLivro);
-                        request.getRequestDispatcher("/atualizar.jsp").forward(request, response);
-                    } catch (ClassNotFoundException | SQLException ex) {
-                       System.out.println("Erro ClassNotFound: " + ex.getMessage());
-                    }
+            } else if (get_Parameter.equals("ConsultarID")) {
+                /* variavel que receberá o id */
+                int id = Integer.parseInt(request.getParameter("id"));
+
+                Livro objLivro = new Livro();
+                LivroDAO objDao = new LivroDAO();
+                objLivro.setId(id);
+                try {
+                    objLivro = objDao.consultarporId(objLivro);
+                    request.setAttribute("objLivro", objLivro);
+                    request.getRequestDispatcher("/atualizar.jsp").forward(request, response);
+                } catch (ClassNotFoundException | SQLException ex) {
+                    System.out.println("Erro ClassNotFound: " + ex.getMessage());
                 }
+
+            }else if(get_Parameter.equals("Atualizar")) {
+                /* Criação de variaveis que receberá os valore via parametro */
+                int id = Integer.parseInt(request.getParameter("id"));
+                String titulo = request.getParameter("titulo");
+                double preco = Double.parseDouble(request.getParameter("preco"));
+                String autor = request.getParameter("autor");
+                String genero = request.getParameter("genero");
+                String editora = request.getParameter("editora");
+                String idioma = request.getParameter("idioma");
+                String classificacaoIndicativa = request.getParameter("classificacao");
+                int anoPublicacao = Integer.parseInt(request.getParameter("anoPublicacao"));
+                int numeroPagina = Integer.parseInt(request.getParameter("pagina"));
                 
                 
+                /* Criação de objetos de acesso */
+                Livro objLivro = new Livro();
+                LivroDAO objDao = new LivroDAO();
                 
+                /* Setando o valor recebido como parametro nas variaveis de acesso da classe livro */
+                objLivro.setId(id);
+                objLivro.setTitulo(titulo);
+                objLivro.setPreco(preco);
+                objLivro.setAutor(autor);
+                objLivro.setGenero(genero);
+                objLivro.setEditora(editora);
+                objLivro.setIdioma(idioma);
+                objLivro.setClassificacaoIndicativa(classificacaoIndicativa);
+                objLivro.setAnoPublicacao(anoPublicacao);
+                objLivro.setNumeroPaginas(numeroPagina);
+                
+                /* Tratamento de erros na atualização dos dados */
+                try{
+                    /* passando dados para classe DAO */
+                    objDao.atualizar(objLivro);
+                    request.getRequestDispatcher("/index.html").forward(request, response);
+                }catch (ClassNotFoundException | SQLException ex) {
+                    System.out.println("Erro: " + ex.getMessage());
+                }
                 
             }
         }

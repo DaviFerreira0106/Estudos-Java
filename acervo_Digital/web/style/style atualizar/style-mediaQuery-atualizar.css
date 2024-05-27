@@ -32,9 +32,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
     }
     
     div#dados {
-        position: absolute;
+        display: inline-block;
         top: 20%;
-        float: left;
         width: 40vw;
     }
     

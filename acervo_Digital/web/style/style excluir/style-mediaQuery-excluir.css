@@ -31,8 +31,14 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
         --font-padrao: Arial, Helvetica, Verdana, sans-serif;
     }
     
+    main > form > p > label {
+        display: inline-block;
+    }
+    
     main > form > p > input {
         width: 400px;
+        display: inline-block;
+        transform: none;
     }
     
     div#linha {

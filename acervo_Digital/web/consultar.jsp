@@ -58,9 +58,8 @@
                     
                     <form action="Servlet_Acervo" method="post">
                         <p id="btnAtualizar">
-                            <input type="hidden" name="<%objLivro.getId();%>">
-                            <button class="button" type="submit" value="ConsultarID"  name="btnOperacao">Atualizar</button>
-                        </p> 
+                            <a href="http://localhost:8080/acervo_Digital/Servlet_Acervo?btnOperacao=ConsultarID&id=<%out.print(objLivro.getId());%>" ><input class="button" type="button" value="Atualizar"></a>
+                        </p>
                         <p id="btnExcluir">
                             <a href="excluir.jsp"><input class="button" type="button" value="Excluir"></a>
                         </p>

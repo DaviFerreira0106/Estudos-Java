@@ -74,22 +74,21 @@ p.dados {
     /*background-color: whitesmoke;*/
 }
 
-p#btnAtualizar {
-    display: inline-block;
-    width: 26vw;
-    height: 5vh;
-    float: left;
-    position: relative;
-    margin-top: 1.5vh
+p#btnAtualizar{
+   width: 26vw;
+   height: 5vh; 
+   display: inline-block;
+   position: relative;
+   float: left;
 }
 
-p#btnExcluir {
-    display: inline-block;
-    width: 26vw;
-    height: 5vh;
-    float: right;
-    position: relative;
-    margin-top: 1.5vh;
+p#btnExcluir{
+   width: 24vw;
+   height: 5vh; 
+   display: inline-block;
+   position: relative;
+   float: right;
+   
 }
 
 input.button {

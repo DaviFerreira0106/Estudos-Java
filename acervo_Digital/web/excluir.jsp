@@ -19,19 +19,14 @@
             <h1>Excluir Livro</h1>
         </header>
         <main>
-            <form id="pesquisa" action="Servlet_Acervo" method="post">
+            <form id="formulario" action="Servlet_Acervo" method="post">
                 <p>
                     <label for="icodigo">Código do Livro</label>
-                    <input type="search" name="codigo" id="icodigo" maxlength="40" placeholder=" &#x1F50D Digite o Código do Livro"
+                    <input type="search" name="id" id="icodigo" maxlength="40" placeholder=" &#x1F50D Digite o Código do Livro">
+                    <button type="submit" value="ConsultarID" id="btnOperacao" name="btnOperacao">Pesquisar</button> 
                 </p>
-            </form>
-            <div id="linha">
-                <form id="formulario" action="Servlet_Acervo" method="post">
+                <div id="linha">
                     <div id="dados">
-                        <p>
-                            
-                            <input id="codigo" type="text" name="iid" placeholder=" Código do Livro">
-                        </p>
                         <p>
                             <div id="imagem">
                                 <!-- Aqui vai a Imagem -->
@@ -41,8 +36,9 @@
                             <input id="buttonExcluir" name="btnOperacao" type="submit" value="Excluir">
                         </p>
                     </div>
-                </form>
             </div>
+            </form>
+            
         </main>
     </body>
 </html>
