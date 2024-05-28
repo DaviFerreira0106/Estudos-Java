@@ -16,64 +16,62 @@
         <link rel="stylesheet" type="text/css" href="style/style consultar/style-mediaQuery-consultar.css">
         <title>Acervo Digital / Consultar</title>
     </head>
-    
+
     <body>
-        <% 
+        <%
             /* Criação de objeto lista, para pegar atributos armazenados na memoria pela servlet */
             List<Livro> objListaLivro = (List<Livro>) request.getAttribute("lista");
         %>
         <main>
             <%
-                if(!objListaLivro.isEmpty()){ 
+                if (!objListaLivro.isEmpty()) {
             %>
             <div id="linha">
                 <%
                     /* Criação de estrutura de repetição para dados armazenados na lista */
-                    for(Livro objLivro : objListaLivro){
+                    for (Livro objLivro : objListaLivro) {
                 %>
                 <div id="foto">
-                    
+
                 </div>
                 <div id="informacoes">
-                    
+
                     <p class="dados" id="nomeLivro">
                         Nome do Livro: <% out.println(objLivro.getTitulo()); %>
                     </p>
-                           
+
                     <p class="dados" id="autor">
                         Autor: <% out.println(objLivro.getAutor()); %>
                     </p>
-                   
+
                     <p class="dados" id="genero">
                         Gênero: <% out.println(objLivro.getGenero()); %>
                     </p>
-                    
+
                     <p class="dados" id="editora">
                         Editora: <% out.println(objLivro.getEditora()); %>
                     </p>
-                    
+
                     <p class="dados" id="anoPublicacao">
                         Ano de Publicação: <% out.println(objLivro.getAnoPublicacao()); %>
                     </p>
-                    
-                    <form action="Servlet_Acervo" method="post">
-                        <p id="btnAtualizar">
-                            <a href="http://localhost:8080/acervo_Digital/Servlet_Acervo?btnOperacao=ConsultarID&id=<%out.print(objLivro.getId());%>" ><input class="button" type="button" value="Atualizar"></a>
-                        </p>
-                        <p id="btnExcluir">
-                            <a href="excluir.jsp"><input class="button" type="button" value="Excluir"></a>
-                        </p>
-                    </form>
+                    <p id="btnAtualizar">
+                        <a href="http://localhost:8080/acervo_Digital/Servlet_Acervo?btnOperacao=ConsultarID&id=<%out.print(objLivro.getId());%>" ><input class="button" type="button" value="Atualizar"></a>
+                    </p>
+                    <p id="btnExcluir">
+                        <a href="excluir.jsp"><input class="button" type="button" value="Excluir"></a>
+                    </p>
                 </div>
-                    <%}}else{%>
-                        <h2 id="txtcodigo">Não há Livros Cadastrados!</h2>
-                        <div id="imagem_sem_cadastro"> 
-                            <picture>
-                                <source media="(max-width: 900px)" srcset="images/sem-cadastro200px.png" type="image/png">
-                                <img id="image" src="images/sem-cadastro300px.png" alt="Sem Livros cadastrados">
-                            </picture>
-                        </div>
-                    <%}%>
+                <%}
+                    } else {%>
+                <h2 id="txtcodigo">Não há Livros Cadastrados!</h2>
+                <div id="imagem_sem_cadastro"> 
+                    <picture>
+                        <source media="(max-width: 900px)" srcset="images/sem-cadastro200px.png" type="image/png">
+                        <img id="image" src="images/sem-cadastro300px.png" alt="Sem Livros cadastrados">
+                    </picture>
+                </div>
+                <%}%>
             </div>
         </main>
     </body>
