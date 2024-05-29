@@ -53,6 +53,10 @@ nav > form > p > span.material-symbols-outlined {
     display: none;
 }
 
+nav > form > p > button > span.material-symbols-outlined {
+    display: none;
+}
+
 nav > form > p > a {
     text-decoration: none;
     color: var(--cor0);
@@ -71,12 +75,27 @@ nav > form > p > input {
     font-size: 1em;
 }
 
+nav > form > p > button {
+    background-color: var(--cor2);
+    color: var(--cor0);
+    border: none;
+    margin-right: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
 nav > form > p > a:hover {
     background-color: var(--cor0);
     color: var(--cor4);
 }
 
 nav > form > p > input:hover {
+    background-color: var(--cor0);
+    color: var(--cor4);
+}
+
+nav > form > p > button:hover {
     background-color: var(--cor0);
     color: var(--cor4);
 }

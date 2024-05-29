@@ -125,6 +125,25 @@ public class Servlet_Acervo extends HttpServlet {
                 /* Armazenar a mensagem de cadastro na memoria do servidor / computador e passar ela para a pagina de resposta */
                 request.setAttribute("lista", objLista);
                 request.getRequestDispatcher("/consultar.jsp").forward(request, response);
+            }else if (get_Parameter.equals("ConsultarExcluir")) {
+
+                /* Criação do objeto de acesso ao Banco de Dados */
+                LivroDAO objDAO = new LivroDAO();
+
+                /* Criação de objeto Lista para armazenar os dados do obj trazidos do BD */
+                List<Livro> objLista = new ArrayList<>();
+
+                /* Chamar o objeto lista para que os valores do objDAO sejam armazenados na lista */
+                try {
+                    objLista = objDAO.consultarTodos();
+                } catch (ClassNotFoundException | SQLException ex) {
+                    message = "Erro" + ex.getMessage();
+                    out.println("Erro" + message);
+                }
+
+                /* Armazenar a mensagem de cadastro na memoria do servidor / computador e passar ela para a pagina de resposta */
+                request.setAttribute("lista", objLista);
+                request.getRequestDispatcher("/excluir.jsp").forward(request, response);
             } else if (get_Parameter.equals("ConsultarID")) {
                 /* variavel que receberá o id */
                 int id = Integer.parseInt(request.getParameter("id"));

@@ -77,6 +77,11 @@ Estilo para Devices maiores
         margin-right: 15px;
     }
     
+    nav > form > p > button > span.material-symbols-outlined {
+        display: inline-block;
+        margin-right: 15px;
+    }
+    
     nav > form > p > a {
         display: inline-block;
         width: 200px;
@@ -86,6 +91,11 @@ Estilo para Devices maiores
         display: inline-block;
         width: 200px;
         margin-bottom: 20px;
+    }
+    
+    nav > form > p > button {
+        display: inline-block;
+        width: 220px;
     }
     
     main {
