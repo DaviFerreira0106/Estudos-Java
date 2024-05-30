@@ -6,6 +6,7 @@ package Controller;
 
 import DAO.LivroDAO;
 import Model.Livro;
+import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -58,6 +59,7 @@ public class Servlet_Acervo extends HttpServlet {
                 String classificacao = request.getParameter("classificacao");
                 int anoPublicacao = Integer.parseInt(request.getParameter("anoPublicacao"));
                 int numeroPaginas = Integer.parseInt(request.getParameter("pagina"));
+                byte[] imagem = request.getParameter("imagem").getBytes();
 
                 /* Criação dos Objetos para efetuar as operações e persistir os dados */
                 Livro objLivro = new Livro();
@@ -74,6 +76,7 @@ public class Servlet_Acervo extends HttpServlet {
                 objLivro.setClassificacaoIndicativa(classificacao);
                 objLivro.setAnoPublicacao(anoPublicacao);
                 objLivro.setNumeroPaginas(numeroPaginas);
+                objLivro.setImagem(imagem);
 
                 /* Chamar o objDAO para persistir os dados no banco de dados */
                 try {
@@ -171,7 +174,7 @@ public class Servlet_Acervo extends HttpServlet {
                 String classificacaoIndicativa = request.getParameter("classificacao");
                 int anoPublicacao = Integer.parseInt(request.getParameter("anoPublicacao"));
                 int numeroPagina = Integer.parseInt(request.getParameter("pagina"));
-                
+                byte[] imagem = request.getParameter("imagem").getBytes();
                 
                 /* Criação de objetos de acesso */
                 Livro objLivro = new Livro();
@@ -188,6 +191,7 @@ public class Servlet_Acervo extends HttpServlet {
                 objLivro.setClassificacaoIndicativa(classificacaoIndicativa);
                 objLivro.setAnoPublicacao(anoPublicacao);
                 objLivro.setNumeroPaginas(numeroPagina);
+                objLivro.setImagem(imagem);
                 
                 /* Tratamento de erros na atualização dos dados */
                 try{

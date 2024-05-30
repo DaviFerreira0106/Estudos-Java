@@ -20,7 +20,7 @@ import java.util.List;
 public class LivroDAO {
     public void cadastrar(Livro l) throws ClassNotFoundException, SQLException {
         Connection con = Conexao.getConexao();
-        PreparedStatement comando = con.prepareStatement("insert into livros (id, titulo, preco, autor, genero, editora, idioma, classificacao_indicativa, ano_publicacao, numero_paginas) values (?,?,?,?,?,?,?,?,?,?)");
+        PreparedStatement comando = con.prepareStatement("insert into livros (id, titulo, preco, autor, genero, editora, idioma, classificacao_indicativa, ano_publicacao, numero_paginas, imagem) values (?,?,?,?,?,?,?,?,?,?,?)");
         comando.setInt(1, l.getId());
         comando.setString(2, l.getTitulo());
         comando.setDouble(3, l.getPreco());
@@ -31,6 +31,7 @@ public class LivroDAO {
         comando.setString(8,l.getClassificacaoIndicativa());
         comando.setInt(9,l.getAnoPublicacao());
         comando.setInt(10,l.getNumeroPaginas());
+        comando.setBytes(11, l.getImagem());
         
         comando.execute();
         con.close();
@@ -46,7 +47,7 @@ public class LivroDAO {
     
     public void atualizar(Livro l) throws ClassNotFoundException, SQLException {
         Connection con = Conexao.getConexao();
-        PreparedStatement comando = con.prepareStatement("update livros set titulo = ?, preco = ?, autor = ?, genero = ?, editora = ?, idioma = ?,classificacao_indicativa = ?, ano_publicacao = ?, numero_paginas = ? where id = ?");
+        PreparedStatement comando = con.prepareStatement("update livros set titulo = ?, preco = ?, autor = ?, genero = ?, editora = ?, idioma = ?,classificacao_indicativa = ?, ano_publicacao = ?, numero_paginas = ?, imagem = ? where id = ?");
         comando.setString(1, l.getTitulo());
         comando.setDouble(2, l.getPreco());
         comando.setString(3,l.getAutor());
@@ -57,6 +58,7 @@ public class LivroDAO {
         comando.setInt(8,l.getAnoPublicacao());
         comando.setInt(9,l.getNumeroPaginas());
         comando.setInt(10, l.getId());
+        comando.setBytes(11, l.getImagem());
         comando.execute();
         con.close();
     }
@@ -79,6 +81,7 @@ public class LivroDAO {
             liv.setClassificacaoIndicativa(rs.getString("classificacao_indicativa"));
             liv.setAnoPublicacao(rs.getInt("ano_publicacao"));
             liv.setNumeroPaginas(rs.getInt("numero_paginas"));
+            liv.setImagem(rs.getBytes("imagem"));
         }        
         return liv;
     }
@@ -102,6 +105,7 @@ public class LivroDAO {
             liv.setClassificacaoIndicativa(rs.getString("classificacao_indicativa"));
             liv.setAnoPublicacao(rs.getInt("ano_publicacao"));
             liv.setNumeroPaginas(rs.getInt("numero_paginas"));
+            liv.setImagem(rs.getBytes("imagem"));
             
             lliv.add(liv);
         }        

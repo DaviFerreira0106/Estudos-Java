@@ -20,6 +20,7 @@ public class Livro {
     private String classificacaoIndicativa;
     private int anoPublicacao;
     private int numeroPaginas;
+    private byte[] imagem;
     
     
     
@@ -102,5 +103,13 @@ public class Livro {
 
     public void setNumeroPaginas(int numeroPaginas) {
         this.numeroPaginas = numeroPaginas;
+    }
+    
+    public void setImagem(byte[] imagem){
+        this.imagem = imagem;
+    }
+    
+    public byte[] getImagem(){
+        return this.imagem;
     }
 }
