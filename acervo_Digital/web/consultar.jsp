@@ -33,7 +33,7 @@
                     for (Livro objLivro : objListaLivro) {
                 %>
                 <div id="foto">
-
+                    <img id="image" src="fotos/<% out.println(objLivro.getImagem());%>" width="50px" height="50px"> 
                 </div>
                 <div id="informacoes">
 
@@ -75,5 +75,12 @@
                 <%}%>
             </div>
         </main>
+<!--        <script>
+            const image = document.querySelector('#image');
+            
+            
+
+            });
+        </script>-->
     </body>
 </html>

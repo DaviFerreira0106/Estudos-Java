@@ -31,7 +31,7 @@ public class LivroDAO {
         comando.setString(8,l.getClassificacaoIndicativa());
         comando.setInt(9,l.getAnoPublicacao());
         comando.setInt(10,l.getNumeroPaginas());
-        comando.setBytes(11, l.getImagem());
+        comando.setString(11, l.getImagem());
         
         comando.execute();
         con.close();
@@ -58,7 +58,7 @@ public class LivroDAO {
         comando.setInt(8,l.getAnoPublicacao());
         comando.setInt(9,l.getNumeroPaginas());
         comando.setInt(10, l.getId());
-        comando.setBytes(11, l.getImagem());
+        comando.setString(11, l.getImagem());
         comando.execute();
         con.close();
     }
@@ -81,7 +81,7 @@ public class LivroDAO {
             liv.setClassificacaoIndicativa(rs.getString("classificacao_indicativa"));
             liv.setAnoPublicacao(rs.getInt("ano_publicacao"));
             liv.setNumeroPaginas(rs.getInt("numero_paginas"));
-            liv.setImagem(rs.getBytes("imagem"));
+            liv.setImagem(rs.getString("imagem"));
         }        
         return liv;
     }
@@ -105,7 +105,7 @@ public class LivroDAO {
             liv.setClassificacaoIndicativa(rs.getString("classificacao_indicativa"));
             liv.setAnoPublicacao(rs.getInt("ano_publicacao"));
             liv.setNumeroPaginas(rs.getInt("numero_paginas"));
-            liv.setImagem(rs.getBytes("imagem"));
+            liv.setImagem(rs.getString("imagem"));
             
             lliv.add(liv);
         }        

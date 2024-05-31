@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
     <head>
-        <meta charset="utf-8">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-ico">
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-ico">
         <link rel="stylesheet" type="text/css" href="style/style cadastro/style_mediaquery.css"/>
         <link rel="stylesheet" type="text/css" href="style/style cadastro/styleCadastro.css">
         <title>Acervo Digital / Cadastrar</title>
@@ -13,16 +12,15 @@
             <h1>Cadastrar Acervo</h1>
         </header>
         <main>
-            <div id="legenda">
-                <p>
-                    <h3>Cadastre um novo Livro!</h3>
-                </p>
-            </div>
-            <section id="formulario">
-                <form name="formCad" action="Servlet_Acervo" method="post" autocomplete="on" accept-charset="utf-8">
-                    <div id="imagem">
-                        <input class="campo" name="imagem" type="file" accept="image/png,image/jpeg" required> 
-                    </div>
+            <form name="formCad" action="Servlet_Acervo" method="post" autocomplete="on" enctype="multipart/form-data">
+                <div id="legenda">
+                    <p>
+                        <h3 id="imagem">Cadastre um novo Livro!</h3>
+                        <label id="botao" for="campoImagem">Selecionar Imagem</label>
+                        <input id="campoImagem" name="imagem" type="file" accept="image/png,image/jpeg" required>
+                    </p> 
+                </div>
+                <div id="dados">
                     <p>
                         <label for="iid">Id</label>
                         <input class="campo" name="id" id="iid" type="number" required min="1">
@@ -66,8 +64,34 @@
                     <p>
                         <input type="submit" value="Cadastrar" id="btnCadastrar" name="btnOperacao">
                     </p>
-                </form>
-            </section>
+                </div>
+
+            </form>
         </main>
+        <script>
+            const image = document.querySelector('#campoImagem');
+            const campo = document.querySelector('#imagem');
+
+            image.addEventListener('change', event => {
+                const preview = document.querySelector('#previewImage');
+                const reader = new FileReader;
+
+                if (preview) {
+                    preview.remove();
+                }
+
+                reader.onload = function (event) {
+                    const previewImage = document.createElement('img');
+                    previewImage.width = 200;
+                    previewImage.height = 300;
+                    previewImage.id = 'previewImage';
+                    previewImage.src = event.target.result;
+                    campo.insertAdjacentElement('afterend', previewImage);
+                }
+
+                reader.readAsDataURL(image.files[0]);
+
+            });
+        </script>
     </body>
 </html>

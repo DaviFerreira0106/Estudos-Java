@@ -20,7 +20,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
 
 @charset "UTF-8";
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 818px) {
     :root{
         --cor0: #DFEBF2;
         --cor1: #99B1BF;
@@ -30,29 +30,65 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
 
         --font-padrao: Arial, Helvetica, Verdana, sans-serif;
     }
+    
+    form {
+        width: 70vw;
+        height: 700px;
+        position: relative;
+    }
 
-    main > div#legenda {
+    main > form > div#legenda {
         display: inline-block;
         width: 25vw;
         height: 300px;
-        float: left;
         transform: translateY(50%);
-        text-align: center
-    }
-    
-    main > section#formulario {
-        display: inline-block;
-        width: 40vw;
-        position: absolute;
-        float: right; 
-    }
-    
-    section#formulario > form > p {
         text-align: center;
     }
     
-    main > section#formulario > form > p > input.campo {
+    main > form > div#dados {
+        display: inline-block;
+        float: right;
+    }
+    
+    main form > div > p {
+        text-align: center;
+    }
+    
+    main > form > div > p > input.campo {
         width: 280px;
+    }
+    
+    input#campoImagem[type=file] {
+        display: none;
+    }
+    
+    img#previewImage {
+        border: 1px solid rgba(0, 0, 0, 0.4);
+        border-radius: 15px;
+        margin-top: 10px;
+    }
+    
+    label#botao {
+        width: 200px;
+        height: 25px;
+        display: block;
+        background-color: #EFEFEF;
+        border: 1px solid rgba(0, 0, 0, 0.4);
+        border-radius: 15px;
+        padding-top: 5px;
+        margin: auto;
+        margin-top: 20px;
+    }
+    
+    label#botao:hover {
+        background-color: var(--cor4);
+        color: var(--cor0);
+    }
+}
+
+@media screen and (min-width: 992px) {
+    main > form > div#dados {
+        padding-right: 80px;
     }
 }
 

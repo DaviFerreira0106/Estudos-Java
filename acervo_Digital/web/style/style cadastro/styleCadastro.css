@@ -55,16 +55,16 @@ div#legenda {
     display: none;
 }
 
-main > section#formulario > form > p {
+main > form > div > p {
     padding: 7px;
 }
 
-main > section#formulario > form > p > label {
+main > form > div > p > label {
     display: block;
     font-size: 1.1em;
 }
 
-main > section#formulario > form > p > input {
+main > form > div > p > input {
     height: 25px;
     width: 60vw;
     border-radius: 10px;
