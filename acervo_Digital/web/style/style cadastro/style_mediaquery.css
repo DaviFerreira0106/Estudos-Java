@@ -31,6 +31,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
         --font-padrao: Arial, Helvetica, Verdana, sans-serif;
     }
     
+    main {
+        padding-bottom: 0px;
+    }
+    
     form {
         width: 70vw;
         height: 700px;
@@ -87,6 +91,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
 }
 
 @media screen and (min-width: 992px) {
+    main {
+        padding-bottom: 0px;
+    }
+    
     main > form > div#dados {
         padding-right: 80px;
     }
