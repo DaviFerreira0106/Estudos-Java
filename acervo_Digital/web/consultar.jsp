@@ -33,7 +33,7 @@
                     for (Livro objLivro : objListaLivro) {
                 %>
                 <div id="foto">
-                    <img id="image" src="fotos/<% out.println(objLivro.getImagem());%>" width="50px" height="50px"> 
+                    <img id="image" src="fotos/<% out.println(objLivro.getImagem());%>"> 
                 </div>
                 <div id="informacoes">
 

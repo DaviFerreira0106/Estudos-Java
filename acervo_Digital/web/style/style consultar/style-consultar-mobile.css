@@ -61,6 +61,13 @@ div#foto {
     border-radius: 10px;
 }
 
+img#image {
+    width: 25vw;
+    height: 39vh;
+    float: left;
+    border-radius: 10px;
+}
+
 div#informacoes {
     width: 52vw;/*300px;*/
     height: 39vh;/*145px;*/
@@ -122,11 +129,6 @@ div#imagem_sem_cadastro {
     height: 350px;
     margin: auto;
     
-}
-
-img#image {
-    position: absolute;
-    transform: translate(30%, 8%);
 }
 
 
