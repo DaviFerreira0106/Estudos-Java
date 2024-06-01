@@ -57,8 +57,8 @@ public class LivroDAO {
         comando.setString(7,l.getClassificacaoIndicativa());
         comando.setInt(8,l.getAnoPublicacao());
         comando.setInt(9,l.getNumeroPaginas());
-        comando.setInt(10, l.getId());
-        comando.setString(11, l.getImagem());
+        comando.setString(10, l.getImagem());
+        comando.setInt(11, l.getId());
         comando.execute();
         con.close();
     }

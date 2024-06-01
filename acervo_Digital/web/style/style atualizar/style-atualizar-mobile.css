@@ -66,11 +66,42 @@ main {
 }
 
 div#imagem {
+    width: 80vw;
+    height: 250px;
+    margin: auto;
+    display: block;
+}
+
+input#AtualizarImagem[type=file] {
+    display: none;
+}
+
+label#botao {
+    width: 200px;
+    height: 25px;
+    text-align: center;
+    display: block;
+    background-color: #EFEFEF;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: 15px;
+    padding-top: 5px;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+label#botao:hover {
+    background-color: var(--cor4);
+    color: var(--cor0);
+}
+
+img#previewImage {
     width: 135px;
     height: 174.89px;
-    margin: auto;
-    background-color: lightgrey;
     border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    display: block;
+    margin: auto;
 }
 
 div#dados {
@@ -94,6 +125,7 @@ div#dados > form > p > input {
     border: 1px solid rgba(0, 0, 0, 0.3);
 }
 
+
 input#btnOperacao[type=submit] {
     width: 130px;
     height: 30px;
@@ -110,7 +142,7 @@ input#btnOperacao[type=submit]:hover {
     color: var(--cor0);
 }
 
-button#btnOperacao {
+button#btnConsulta {
     margin: auto;
     display: block;
     width: 130px;
@@ -121,7 +153,7 @@ button#btnOperacao {
     border: 1px solid black;
 }
 
-button#btnOperacao:hover{
+button#btnConsulta:hover{
     background-color: var(--cor4);
     color: var(--cor0);
 }

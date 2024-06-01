@@ -51,7 +51,6 @@ public class Servlet_Acervo extends HttpServlet {
 
                 /* Variavel que pega a informação passada dos formularios */
                 String get_Parameter = objUpload.getForm().get("btnOperacao").toString();
-
                 /* Variavel para tratamento de mensagem */
                 String message = "";
 
@@ -159,8 +158,9 @@ public class Servlet_Acervo extends HttpServlet {
                     request.setAttribute("lista", objLista);
                     request.getRequestDispatcher("/excluir.jsp").forward(request, response);
                 } else if (get_Parameter.equals("ConsultarID")) {
+
                     /* variavel que receberá o id */
-                    int id = Integer.parseInt(request.getParameter("id"));
+                    int id = Integer.parseInt(objUpload.getForm().get("id").toString());
 
                     Livro objLivro = new Livro();
                     LivroDAO objDao = new LivroDAO();
@@ -175,17 +175,17 @@ public class Servlet_Acervo extends HttpServlet {
 
                 } else if (get_Parameter.equals("Atualizar")) {
                     /* Criação de variaveis que receberá os valore via parametro */
-                    int id = Integer.parseInt(request.getParameter("id"));
-                    String titulo = request.getParameter("titulo");
-                    double preco = Double.parseDouble(request.getParameter("preco"));
-                    String autor = request.getParameter("autor");
-                    String genero = request.getParameter("genero");
-                    String editora = request.getParameter("editora");
-                    String idioma = request.getParameter("idioma");
-                    String classificacaoIndicativa = request.getParameter("classificacao");
-                    int anoPublicacao = Integer.parseInt(request.getParameter("anoPublicacao"));
-                    int numeroPagina = Integer.parseInt(request.getParameter("pagina"));
-                    String imagem = request.getParameter("imagem");
+                    int id = Integer.parseInt(objUpload.getForm().get("id").toString());
+                    String titulo = objUpload.getForm().get("titulo").toString();
+                    double preco = Double.parseDouble(objUpload.getForm().get("preco").toString());
+                    String autor = objUpload.getForm().get("autor").toString();
+                    String genero = objUpload.getForm().get("genero").toString();
+                    String editora = objUpload.getForm().get("editora").toString();
+                    String idioma = objUpload.getForm().get("idioma").toString();
+                    String classificacaoIndicativa = objUpload.getForm().get("classificacao").toString();
+                    int anoPublicacao = Integer.parseInt(objUpload.getForm().get("anoPublicacao").toString());
+                    int numeroPagina = Integer.parseInt(objUpload.getForm().get("pagina").toString());
+                    String imagem = objUpload.getFiles().get(0);
 
                     /* Criação de objetos de acesso */
                     Livro objLivro = new Livro();

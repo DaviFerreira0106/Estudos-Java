@@ -56,12 +56,17 @@
                     <p class="dados" id="anoPublicacao">
                         Ano de Publicação: <% out.println(objLivro.getAnoPublicacao()); %>
                     </p>
-                    <p id="btnAtualizar">
-                        <a href="http://localhost:8080/acervo_Digital/Servlet_Acervo?btnOperacao=ConsultarID&id=<%out.print(objLivro.getId());%>" ><input class="button" type="button" value="Atualizar"></a>
-                    </p>
-                    <p id="btnExcluir">
-                        <a href="excluir.jsp"><input class="button" type="button" value="Excluir"></a>
-                    </p>
+                    <form action="Servlet_Acervo" method="post" enctype="multipart/form-data">
+                       <p id="btnAtualizar">
+                           <%--<%request.setAttribute("idCod", objLivro.getId());%>--%>
+                           <input type="hidden" name="id" value="<%out.print(objLivro.getId()); %>">
+                            <button class="button" type="submit" name="btnOperacao" value="ConsultarID">Atualizar</button>
+                        </p>
+                        <p id="btnExcluir">
+                            <a href="excluir.jsp"><input class="button" type="button" value="Excluir"></a>
+                        </p> 
+                    </form>
+                    
                 </div>
                 <%}
                     } else {%>
@@ -75,12 +80,5 @@
                 <%}%>
             </div>
         </main>
-<!--        <script>
-            const image = document.querySelector('#image');
-            
-            
-
-            });
-        </script>-->
     </body>
 </html>

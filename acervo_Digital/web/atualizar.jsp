@@ -1,4 +1,4 @@
-<%-- 
+<%--
     Document   : atualizar
     Created on : 10 de abr. de 2024, 00:19:39
     Author     : daviferreira
@@ -15,6 +15,7 @@
         <link rel="stylesheet" type="text/css" href="style/style atualizar/style-atualizar-mobile.css">
         <link rel="stylesheet" type="text/css" href="style/style atualizar/style-mediaQuery-atualizar.css">
         <title>Acervo Digital / Atualizar</title>
+        
     </head>
     <body>
         <%
@@ -25,12 +26,14 @@
         </header>
         <main>
             <!-- Verifica se tem livros cadastrados pelo id, caso tenha, exibe formulario para digitar id do livro -->
-            <%if(objLivro.getId() != 0) {%>
-            <div id="imagem">
-                <!<!-- Aqui vai a Imagem do BD -->
-            </div>
+            <%if (objLivro.getId() != 0) {%>
+
             <div id="dados">
-                <form action="Servlet_Acervo" method="post" autocomplete="on">
+                <form action="Servlet_Acervo" method="post" autocomplete="on" enctype="multipart/form-data">
+                    <div id="imagem">
+                        <label id="botao" for="AtualizarImagem">Selecionar Imagem</label>
+                        <input id="AtualizarImagem" type="file" name="imagem" accept="image/png,image/jpeg" enctype="multipart/form-data">
+                    </div>
                     <p>
                         <label for="iid">Id</label>
                         <input class="campo" name="id" id="iid" type="number" value="<%out.print(objLivro.getId());%>">
@@ -77,15 +80,38 @@
                 </form>
             </div>
             <!-- Caso não tenha livro cadastrado, retorna um else vazio para não exibir formulario -->
-            <%}else {%>
-                <h2 id="txtcodigo">Não há Livros para Atualizar!</h2>
-                <div id="imagem_sem_cadastro"> 
-                    <picture>
-                        <source media="(max-width: 900px)" srcset="images/sem-cadastro200px.png" type="image/png">
-                        <img id="image" src="images/sem-cadastro300px.png" alt="Sem Livros cadastrados">
-                    </picture>
-                </div>
+            <%} else {%>
+            <h2 id="txtcodigo">Não há Livros para Atualizar!</h2>
+            <div id="imagem_sem_cadastro">
+                <picture>
+                    <source media="(max-width: 900px)" srcset="images/sem-cadastro200px.png" type="image/png">
+                    <img id="image" src="images/sem-cadastro300px.png" alt="Sem Livros cadastrados">
+                </picture>
+            </div>
             <%}%>
         </main>
+        <script type="text/javascript">
+            const image = document.querySelector('#AtualizarImagem');
+            const campo = document.querySelector('#imagem');
+
+            image.addEventListener('change', event => {
+                const preview = document.querySelector('#previewImage');
+                const reader = new FileReader;
+
+                if (preview) {
+                    preview.remove();
+                }
+
+                reader.onload = function (event) {
+                    const previewImage = document.createElement('img');
+                    previewImage.id = 'previewImage';
+                    previewImage.src = event.target.result;
+                    campo.insertAdjacentElement('afterbegin', previewImage);
+                }
+
+                reader.readAsDataURL(image.files[0]);
+
+            });
+        </script>
     </body>
 </html>

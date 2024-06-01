@@ -19,12 +19,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
         </header>
         <main>
             <h2 id="txtcodigo">Digite o Código do Livro.</h2>
-            <form id="pesquisa" action="Servlet_Acervo" method="post">
+            <form id="pesquisa" action="Servlet_Acervo" method="post" enctype="multipart/form-data">
                 <p>
                     <input class="campo" name="id" id="iid" type="number" placeholder=" Código" required>
                 </p>
                 <p>
-                    <button type="submit" value="ConsultarID" id="btnOperacao" name="btnOperacao">Consultar</button>
+                    <button type="submit" value="ConsultarID" id="btnConsulta" name="btnOperacao">Consultar</button>
                 </p>
                 
             </form>
