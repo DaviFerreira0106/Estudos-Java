@@ -31,41 +31,46 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
 
         --font-padrao: Arial, Helvetica, Verdana, sans-serif;
     }
-    
+
     main {
         width: 60vw;
     }
-    
+
     div#linha {
         width: 60vw;
     }
-    
+
     div#foto {
         width: 15vw;
     }
-    
+
     img#image {
         width: 15vw;
     }
-    
+
     div#informacoes {
         width: 42vw;
         margin-top: 5px;
     }
-    
+
     p#btnAtualizar {
         width: 20vw;
-        
+
     }
-    
+
     p#btnExcluir {
         width: 20vw;
-        
+
     }
-    
-    input.button {
+
+    button.button {
         width: 100px;
         transform: translateX(-90%)
+    }
+
+    div#imagem_sem_cadastro {
+        width: 59vw;
+
     }
 }
 
@@ -73,20 +78,20 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
     p#btnExcluir {
         transform: translateX(-50%);
     }
-    
+
     div#foto {
         width: 13vw;
     }
-    
+
     img#image {
         width: 13vw;
     }
-    
+
     div#informacoes {
         width: 45vw;
     }
-    
-    input.button {
+
+    button.button {
         transform: translateX(-100%);
     }
 }

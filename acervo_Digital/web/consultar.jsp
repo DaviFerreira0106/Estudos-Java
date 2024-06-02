@@ -63,7 +63,8 @@
                             <button class="button" type="submit" name="btnOperacao" value="ConsultarID">Atualizar</button>
                         </p>
                         <p id="btnExcluir">
-                            <a href="excluir.jsp"><input class="button" type="button" value="Excluir"></a>
+                            <input type="hidden" name="iid" value="<%out.print(objLivro.getId()); %>">
+                            <button class="button" type="submit" name="btnOperacao" value="Excluir">Excluir</button>
                         </p> 
                     </form>
                     
@@ -74,7 +75,7 @@
                 <div id="imagem_sem_cadastro"> 
                     <picture>
                         <source media="(max-width: 900px)" srcset="images/sem-cadastro200px.png" type="image/png">
-                        <img id="image" src="images/sem-cadastro300px.png" alt="Sem Livros cadastrados">
+                        <img id="imagem_sem_cadastro" src="images/sem-cadastro300px.png" alt="Sem Livros cadastrados">
                     </picture>
                 </div>
                 <%}%>

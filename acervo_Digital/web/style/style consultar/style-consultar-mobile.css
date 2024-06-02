@@ -99,7 +99,7 @@ p#btnExcluir{
    
 }
 
-input.button {
+button.button {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -110,7 +110,7 @@ input.button {
     border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-input.button:hover {
+button.button:hover {
     background-color: var(--cor4);
     color: var(--cor0);
 }
@@ -121,12 +121,14 @@ h2#txtcodigo {
     color: var(--cor4);
 }
 
-img#imagemSemCadastro {
+img#imagem_sem_cadastro {
+    display: block;
     background-position: center;
+    margin: auto;
 }
 
 div#imagem_sem_cadastro {
-    width: 350px;
+    width: 79vw;
     height: 350px;
     margin: auto;
     

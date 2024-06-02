@@ -9,13 +9,22 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Deletar Teste</title>
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-ico">
+        <title>Acervo Digital / Excluir</title>
     </head>
     <body>
-        <h1>Livro Deletado</h1>
-        <h2><% 
+        <h2 id="mensagem"><%
             String message = (String) request.getAttribute("message");
             out.println(message);
-        %></h2>
+
+            %>
+        </h2>
+        <script>
+            const message = document.querySelector('#menssagem');
+
+            window.alert(`${message}`);
+
+            window.location.assign('http://localhost:8080/acervo_Digital/index.html');
+        </script>
     </body>
 </html>

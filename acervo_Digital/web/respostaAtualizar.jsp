@@ -1,6 +1,6 @@
 <%-- 
-    Document   : repostaTemp
-    Created on : 11 de abr. de 2024, 11:07:26
+    Document   : respostaAtualizar
+    Created on : 2 de jun. de 2024, 15:49:17
     Author     : daviferreira
 --%>
 
@@ -10,16 +10,15 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="shortcut icon" href="images/favicon.ico" type="image/x-ico">
-        <title>Acervo Digital / Cadastrar</title>
+        <title>Acervo Digital / Atualizar</title>
     </head>
     <body>
-        <h2 id="menssagem">
-            <%
-                String message = (String) request.getAttribute("message");
-                out.println(message);
-            %> 
-        </h2>
+        <h2 id="mensagem"><%
+            String message = (String) request.getAttribute("message");
+            out.println(message);
 
+            %>
+        </h2>
         <script>
             const message = document.querySelector('#menssagem');
 

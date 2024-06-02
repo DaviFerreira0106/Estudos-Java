@@ -36,6 +36,22 @@ header {
     text-align: center;
     padding: 20px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    
+}
+
+h1 {
+    display: inline-block;
+}
+
+a {
+    text-decoration: none;
+}
+
+span#index {
+    font-weight: bold;
+    display: inline-block;
+    float: left;
+    color: var(--cor0);
 }
 
 main {

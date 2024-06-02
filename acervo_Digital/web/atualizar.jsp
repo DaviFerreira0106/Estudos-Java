@@ -31,8 +31,10 @@
             <div id="dados">
                 <form action="Servlet_Acervo" method="post" autocomplete="on" enctype="multipart/form-data">
                     <div id="imagem">
+                        <img id="previewImage" src="fotos/<%out.println(objLivro.getImagem());%>">
                         <label id="botao" for="AtualizarImagem">Selecionar Imagem</label>
-                        <input id="AtualizarImagem" type="file" name="imagem" accept="image/png,image/jpeg" enctype="multipart/form-data">
+                        <input id="AtualizarImagem" type="file" name="imagem" accept="image/png,image/jpeg">
+                        
                     </div>
                     <p>
                         <label for="iid">Id</label>
@@ -75,6 +77,7 @@
                         <input class="campo" name="pagina" id="ipagina" type="number" value="<%out.print(objLivro.getNumeroPaginas());%>">
                     </p>
                     <p>
+                        <input type="hidden" name="imagem" value="<%out.print(objLivro.getImagem());%>">
                         <input type="submit" value="Atualizar" id="btnOperacao" name="btnOperacao">
                     </p>
                 </form>
@@ -93,9 +96,11 @@
         <script type="text/javascript">
             const image = document.querySelector('#AtualizarImagem');
             const campo = document.querySelector('#imagem');
-
+            
             image.addEventListener('change', event => {
+                
                 const preview = document.querySelector('#previewImage');
+                
                 const reader = new FileReader;
 
                 if (preview) {
