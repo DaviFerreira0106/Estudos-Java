@@ -44,6 +44,14 @@ main {
     padding-top: 20px;
 }
 
+h2#legenda {
+    color: var(--cor2);
+    display: block;
+    width: 350px;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
 main > form > p > label {
     display: none;
 }
@@ -117,4 +125,21 @@ input#buttonExcluir {
 input#buttonExcluir:hover {
     background-color: var(--cor4);
     color: var(--cor0);
+}
+
+img#imagem_sem_cadastro {
+    display: block;
+    background-position: center;
+    margin: auto;
+    padding-top: 50px;
+}
+
+div#imagem_sem_cadastro {
+    width: 79vw;
+    height: 350px;
+    margin: auto;
+    background-color: white;
+    border-radius: 10px; 
+    
+    
 }

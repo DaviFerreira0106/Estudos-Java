@@ -57,11 +57,11 @@
                 <%
                 } else {
                 %>
-                <h2 id="txtcodigo">Não há Livros Cadastrados!</h2>
+                    <h2 id="legenda">Não há Livros Cadastrados!</h2>
                 <div id="imagem_sem_cadastro"> 
                     <picture>
                         <source media="(max-width: 900px)" srcset="images/sem-cadastro200px.png" type="image/png">
-                        <img id="image" src="images/sem-cadastro300px.png" alt="Sem Livros cadastrados">
+                        <img id="imagem_sem_cadastro" src="images/sem-cadastro300px.png" alt="Sem Livros cadastrados">
                     </picture>
                 </div>
                 <%}%>

@@ -94,18 +94,19 @@ public class LivroDAO {
         
         List<Livro> lliv = new ArrayList<Livro>();
         while(rs.next()){
-            Livro liv = new Livro();
-            liv.setId(rs.getInt("id"));
-            liv.setTitulo(rs.getString("titulo"));
-            liv.setPreco(rs.getDouble("preco"));
-            liv.setAutor(rs.getString("autor"));
-            liv.setGenero(rs.getString("genero"));
-            liv.setEditora(rs.getString("editora"));
-            liv.setIdioma(rs.getString("idioma"));
-            liv.setClassificacaoIndicativa(rs.getString("classificacao_indicativa"));
-            liv.setAnoPublicacao(rs.getInt("ano_publicacao"));
-            liv.setNumeroPaginas(rs.getInt("numero_paginas"));
-            liv.setImagem(rs.getString("imagem"));
+            Livro liv = Livro.getBuilder()
+                    .comId(rs.getInt("id"))
+                    .comTitulo(rs.getString("titulo"))
+                    .comPreco(rs.getDouble("preco"))
+                    .comAutor(rs.getString("autor"))
+                    .comGenero(rs.getString("genero"))
+                    .comEditora(rs.getString("editora"))
+                    .comIdioma(rs.getString("idioma"))
+                    .comClassificacaoIndicativa(rs.getString("classificacao_indicativa"))
+                    .comAnoPublicacao(rs.getInt("ano_publicacao"))
+                    .comNumeroPaginas(rs.getInt("numero_paginas"))
+                    .comImagem(rs.getString("imagem"))
+                    .constroi();
             
             lliv.add(liv);
         }        

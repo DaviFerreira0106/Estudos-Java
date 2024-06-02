@@ -9,6 +9,7 @@ package Model;
  * @author daviferreira
  */
 public class Livro {
+
     // Atributos
     private int id;
     private String titulo;
@@ -21,9 +22,7 @@ public class Livro {
     private int anoPublicacao;
     private int numeroPaginas;
     private String imagem;
-    
-    
-    
+
     // Getters e Setters
     public int getId() {
         return id;
@@ -104,12 +103,81 @@ public class Livro {
     public void setNumeroPaginas(int numeroPaginas) {
         this.numeroPaginas = numeroPaginas;
     }
-    
-    public void setImagem(String imagem){
+
+    public void setImagem(String imagem) {
         this.imagem = imagem;
     }
-    
-    public String getImagem(){
+
+    public String getImagem() {
         return this.imagem;
+    }
+    
+    public static LivroBuilder getBuilder(){
+        return new LivroBuilder();
+    }
+
+    public static class LivroBuilder {
+
+        private Livro liv = new Livro();
+
+        public LivroBuilder comId(int id) {
+            liv.id = id;
+            return this;
+        }
+
+        public LivroBuilder comTitulo(String titulo) {
+            liv.titulo = titulo;
+            return this;
+        }
+
+        public LivroBuilder comPreco(double preco) {
+            liv.preco = preco;
+            return this;
+        }
+
+        public LivroBuilder comAutor(String autor) {
+            liv.autor = autor;
+            return this;
+        }
+
+        public LivroBuilder comGenero(String genero) {
+            liv.genero = genero;
+            return this;
+        }
+
+        public LivroBuilder comEditora(String editora) {
+            liv.editora = editora;
+            return this;
+        }
+
+        public LivroBuilder comIdioma(String idioma) {
+            liv.idioma = idioma;
+            return this;
+        }
+
+        public LivroBuilder comClassificacaoIndicativa(String Classificacao_Indicativa) {
+            liv.classificacaoIndicativa = Classificacao_Indicativa;
+            return this;
+        }
+
+        public LivroBuilder comAnoPublicacao(int Ano_Publicacao) {
+            liv.anoPublicacao = Ano_Publicacao;
+            return this;
+        }
+
+        public LivroBuilder comNumeroPaginas(int Numero_Paginas) {
+            liv.numeroPaginas = Numero_Paginas;
+            return this;
+        }
+
+        public LivroBuilder comImagem(String imagem) {
+            liv.imagem = imagem;
+            return this;
+        }
+
+        public Livro constroi() {
+            return liv;
+        }
+
     }
 }
