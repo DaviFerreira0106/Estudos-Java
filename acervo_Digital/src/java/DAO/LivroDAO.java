@@ -20,18 +20,18 @@ import java.util.List;
 public class LivroDAO {
     public void cadastrar(Livro l) throws ClassNotFoundException, SQLException {
         Connection con = Conexao.getConexao();
-        PreparedStatement comando = con.prepareStatement("insert into livros (id, titulo, preco, autor, genero, editora, idioma, classificacao_indicativa, ano_publicacao, numero_paginas, imagem) values (?,?,?,?,?,?,?,?,?,?,?)");
-        comando.setInt(1, l.getId());
-        comando.setString(2, l.getTitulo());
-        comando.setDouble(3, l.getPreco());
-        comando.setString(4,l.getAutor());
-        comando.setString(5,l.getGenero());
-        comando.setString(6,l.getEditora());
-        comando.setString(7,l.getIdioma());
-        comando.setString(8,l.getClassificacaoIndicativa());
-        comando.setInt(9,l.getAnoPublicacao());
-        comando.setInt(10,l.getNumeroPaginas());
-        comando.setString(11, l.getImagem());
+        PreparedStatement comando = con.prepareStatement("insert into livros (titulo, preco, autor, genero, editora, idioma, classificacao_indicativa, ano_publicacao, numero_paginas, imagem) values (?,?,?,?,?,?,?,?,?,?)");
+//        comando.setInt(1, l.getId());
+        comando.setString(1, l.getTitulo());
+        comando.setDouble(2, l.getPreco());
+        comando.setString(3,l.getAutor());
+        comando.setString(4,l.getGenero());
+        comando.setString(5,l.getEditora());
+        comando.setString(6,l.getIdioma());
+        comando.setString(7,l.getClassificacaoIndicativa());
+        comando.setInt(8,l.getAnoPublicacao());
+        comando.setInt(9,l.getNumeroPaginas());
+        comando.setString(10, l.getImagem());
         
         comando.execute();
         con.close();

@@ -28,19 +28,20 @@
         </header>
         <main>
             <form id="formulario" action="Servlet_Acervo" method="post" enctype="multipart/form-data">
-                <%
-                    if (!objListaLivro.isEmpty()) {
-                %>
                 <p>
                     <label for="icodigo">Código do Livro</label>
                     <input type="search" name="id" id="icodigo" maxlength="40" placeholder=" &#x1F50D Digite o Código do Livro">
                     <button type="submit" value="ConsultarIdExcluir" id="btnOperacao" name="btnOperacao">Pesquisar</button> 
                 </p>
+            </form>
                 <%
-                    /* Loop para trazer dados do BD */
-                    for (Livro objLivro : objListaLivro) {
+                    if (!objListaLivro.isEmpty()) {
+
+                        /* Loop para trazer dados do BD */
+                        for (Livro objLivro : objListaLivro) {
                 %>
                 <div id="linha">
+                <form action="Servlet_Acervo" method="post" enctype="multipart/form-data">
                     <div id="dados">
                         <p>
                         <div id="imagem">
@@ -52,12 +53,13 @@
                             <input id="buttonExcluir" name="btnOperacao" type="submit" value="Excluir">
                         </p>
                     </div>
+                </form>
                 </div>
                 <%}%>
                 <%
                 } else {
                 %>
-                    <h2 id="legenda">Não há Livros Cadastrados!</h2>
+                <h2 id="legenda">Não há Livros Cadastrados!</h2>
                 <div id="imagem_sem_cadastro"> 
                     <picture>
                         <source media="(max-width: 900px)" srcset="images/sem-cadastro200px.png" type="image/png">

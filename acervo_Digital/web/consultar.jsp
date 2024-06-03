@@ -40,6 +40,10 @@
                     <p class="dados" id="nomeLivro">
                         Nome do Livro: <% out.println(objLivro.getTitulo()); %>
                     </p>
+                    
+                    <p class="dados" id="preco">
+                        Nome do Livro: <% out.println(objLivro.getPreco()); %>
+                    </p>
 
                     <p class="dados" id="autor">
                         Autor: <% out.println(objLivro.getAutor()); %>

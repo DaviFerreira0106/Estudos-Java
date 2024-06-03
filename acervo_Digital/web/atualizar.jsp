@@ -37,8 +37,7 @@
                         
                     </div>
                     <p>
-                        <label for="iid">Id</label>
-                        <input class="campo" name="id" id="iid" type="number" value="<%out.print(objLivro.getId());%>">
+                        <input class="campo" name="id" id="iid" type="hidden" value="<%out.print(objLivro.getId());%>">
                     </p>
                     <p>
                         <label for="ititulo">Titulo</label>

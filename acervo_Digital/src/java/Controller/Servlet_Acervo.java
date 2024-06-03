@@ -55,7 +55,7 @@ public class Servlet_Acervo extends HttpServlet {
                 String get_Parameter = objUpload.getForm().get("btnOperacao").toString();
                 
                 /* Montagem do nome da classe de acordo com solicitação requisitada */
-                String nomeClasse = "br.com.commandfactory.contoller." + get_Parameter + "LivroAction";
+                String nomeClasse = "br.com.commandfactory.controller." + get_Parameter + "LivroAction";
                 
                 /* Criação de classe (meta-programação) */
                 Class classeAction = Class.forName(nomeClasse);
