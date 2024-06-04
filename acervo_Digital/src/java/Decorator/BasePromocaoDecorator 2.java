@@ -8,15 +8,16 @@ package Decorator;
  *
  * @author daviferreira
  */
-public class AltabookDecorator extends BasePromocaoDecorator {
+public class BasePromocaoDecorator implements IPromocao{
     
-    public AltabookDecorator(IPromocao wrapped){
-        super(wrapped);
+    private final IPromocao wrapped;
+    
+    public BasePromocaoDecorator(IPromocao wrapped){
+        this.wrapped = wrapped;
     }
     
     @Override
     public Double getPrecoLivro(){
-        Double valor = super.getPrecoLivro() * 0.1;
-        return super.getPrecoLivro() - valor;
+        return wrapped.getPrecoLivro();
     }
 }

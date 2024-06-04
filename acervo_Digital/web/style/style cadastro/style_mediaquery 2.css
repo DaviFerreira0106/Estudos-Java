@@ -1,0 +1,103 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 9 de abr. de 2024, 10:26:03
+    Author     : daviferreira
+*/
+
+/* 
+    Typical Devices Breakpoint 29/01/2024 - W3C
+
+    - Dispositivos extra pequenos: até 600px
+    - Tablets em retrato e celulares: 600px até 768px
+    - Tablets em Paisagem: 768px até 992px
+    - Laptops/Desktps: 992px até 1200px
+    - Laptops/Desktops grandes: 1200px para cima
+
+*/
+
+@charset "UTF-8";
+
+@media screen and (min-width: 818px) {
+    :root{
+        --cor0: #DFEBF2;
+        --cor1: #99B1BF;
+        --cor2: #356B8C;
+        --cor3: #396273;
+        --cor4: #0D3140;
+
+        --font-padrao: Arial, Helvetica, Verdana, sans-serif;
+    }
+    
+    main {
+        padding-bottom: 0px;
+    }
+    
+    form {
+        width: 70vw;
+        height: 700px;
+        position: relative;
+    }
+
+    main > form > div#legenda {
+        display: inline-block;
+        width: 25vw;
+        height: 300px;
+        transform: translateY(50%);
+        text-align: center;
+    }
+    
+    main > form > div#dados {
+        display: inline-block;
+        float: right;
+        margin-top: 50px;
+    }
+    
+    main form > div > p {
+        text-align: center;
+    }
+    
+    main > form > div > p > input.campo {
+        width: 280px;
+    }
+    
+    input#campoImagem[type=file] {
+        display: none;
+    }
+    
+    img#previewImage {
+        border: 1px solid rgba(0, 0, 0, 0.4);
+        border-radius: 15px;
+        margin-top: 10px;
+    }
+    
+    label#botao {
+        width: 200px;
+        height: 25px;
+        display: block;
+        background-color: #EFEFEF;
+        border: 1px solid rgba(0, 0, 0, 0.4);
+        border-radius: 15px;
+        padding-top: 5px;
+        margin: auto;
+        margin-top: 20px;
+    }
+    
+    label#botao:hover {
+        background-color: var(--cor4);
+        color: var(--cor0);
+    }
+}
+
+@media screen and (min-width: 992px) {
+    main {
+        padding-bottom: 0px;
+    }
+    
+    main > form > div#dados {
+        padding-right: 80px;
+    }
+}
+

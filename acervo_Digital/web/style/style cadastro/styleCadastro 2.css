@@ -1,0 +1,140 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 8 de abr. de 2024, 14:04:27
+    Author     : daviferreira
+*/
+
+@charset "UTF-8";
+
+:root {
+    --cor0: #DFEBF2;
+    --cor1: #99B1BF;
+    --cor2: #356B8C;
+    --cor3: #396273;
+    --cor4: #0D3140;
+    
+    --font-padrao: Arial, Helvetica, Verdana, sans-serif;
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: var(--font-padrao);
+}
+
+body {
+    background-color: var(--cor0);
+}
+
+header {
+    height: 5vh; 
+    background-color: var(--cor2);
+    color: var(--cor0);
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    
+}
+
+h1 {
+    display: inline-block;
+}
+
+a {
+    text-decoration: none;
+}
+
+span#index {
+    font-weight: bold;
+    display: inline-block;
+    float: left;
+    color: var(--cor0);
+}
+
+main {
+    width: 70vw;
+    /*height: 1100px;*/
+    top: 5vh;
+    margin: auto;
+    background-color: white;
+    padding: 20px;
+    padding-bottom: 80px;
+    border-radius: 15px;
+    margin-bottom: 40px;
+    margin-top: 30px;
+    box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.1);
+}
+
+div#legenda {
+    display: block;
+    width: 60vw;
+    height: 400px;
+    text-align: center;
+    margin: auto;
+}
+
+input#campoImagem[type=file] {
+    display: none;
+}
+
+img#previewImage {
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: 15px;
+    margin-top: 10px;
+}
+
+label#botao {
+    width: 200px;
+    height: 25px;
+    display: block;
+    background-color: #EFEFEF;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: 15px;
+    padding-top: 5px;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+label#botao:hover {
+    background-color: var(--cor4);
+    color: var(--cor0);
+}
+
+main > form > div > p {
+    padding: 7px;
+    display: block;
+}
+
+main > form > div > p > label {
+    display: block;
+    font-size: 1.1em;
+}
+
+main > form > div > p > input {
+    height: 25px;
+    width: 60vw;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+input#btnCadastrar[type=submit] {
+    width: 130px;
+    height: 30px;
+    border-radius: 15px;
+    margin-top: 30px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1em;
+}
+
+input[type=submit]:hover {
+    background-color: var(--cor4);
+    color: var(--cor0);
+}
+
+

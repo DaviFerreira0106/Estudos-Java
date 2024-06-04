@@ -8,7 +8,6 @@ import DAO.LivroDAO;
 import Model.Livro;
 import Util.Upload;
 import br.com.commandfactory.controller.ICommand;
-import facade.ControleFacadeWeb;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -51,9 +50,28 @@ public class Servlet_Acervo extends HttpServlet {
             objUpload.setFolderUpload("fotos");
 
             if (objUpload.formProcess(getServletContext(), request)) {
-                ControleFacadeWeb objFacadeWeb = new ControleFacadeWeb();
-                objFacadeWeb.acionar(request, response, objUpload);
+
+                /* Variavel que pega a informação passada dos formularios */
+                String get_Parameter = objUpload.getForm().get("btnOperacao").toString();
+                
+                /* Montagem do nome da classe de acordo com solicitação requisitada */
+                String nomeClasse = "br.com.commandfactory.controller." + get_Parameter + "LivroAction";
+                
+                /* Criação de classe (meta-programação) */
+                Class classeAction = Class.forName(nomeClasse);
+                
+                /* Instancia a classe utilizando a factory da classe criada */
+                ICommand commandAction = (ICommand) classeAction.newInstance();
+                
+                /* Executa a ação */
+                String pageDispatcher = commandAction.executar(request, response, objUpload);
+                RequestDispatcher rd = request.getRequestDispatcher(pageDispatcher);
+                rd.forward(request, response);
             }
+        }catch(Exception e){
+            request.setAttribute("message", e);
+            RequestDispatcher rd = request.getRequestDispatcher("/respostaTemp.jsp");
+            rd.forward(request, response);
         }
     }
 

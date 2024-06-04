@@ -1,0 +1,131 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 7 de abr. de 2024, 12:35:08
+    Author     : daviferreira
+
+Estilo para Devices maiores
+*/
+
+@charset "UTF-8";
+
+/* 
+    Typical Devices Breakpoint 29/01/2024 - W3C
+
+    - Dispositivos extra pequenos: até 600px
+    - Tablets em retrato e celulares: 600px até 768px
+    - Tablets em Paisagem: 768px até 992px
+    - Laptops/Desktps: 992px até 1200px
+    - Laptops/Desktops grandes: 1200px para cima
+
+*/
+
+/* Desktop */
+@media screen and (min-width: 992px) {
+    :root{
+        --cor0: #DFEBF2;
+        --cor1: #99B1BF;
+        --cor2: #356B8C;
+        --cor3: #396273;
+        --cor4: #0D3140;
+
+        --font-padrao: Arial, Helvetica, Verdana, sans-serif;
+    }
+
+    body {
+        background-color: var(--cor0);
+        position: relative;
+    }
+    
+    header {
+        width: 78vw;
+        height: 10vh;
+        display: inline-block;
+        position: absolute;
+        left: 22vw;
+        padding: 0px;
+    }
+    
+    header > h1 {
+        padding-left: 20px;
+        padding-top: 30px;
+        padding-bottom: 0px;
+        padding-right: 0px;
+    }
+    
+    nav {
+        width: 22vw;
+        height: 100vh;
+        display: inline-block;
+    }
+    
+    div#logotipo {
+        background: var(--cor2) url(../..//images/logotipo.png) no-repeat;
+        height: 225px;
+        display: block;
+        background-position: center center;
+    }
+    
+    nav > form > p {
+      display: block;  
+    }
+    
+    nav > form > p > a > span.material-symbols-outlined {
+        display: inline-block;
+        margin-right: 15px;
+    }
+    
+    nav > form > p > button > span.material-symbols-outlined {
+        display: inline-block;
+        margin-right: 15px;
+    }
+    
+    nav > form > p > a {
+        display: inline-block;
+        width: 200px;
+    }
+    
+    nav > form > p > input {
+        display: inline-block;
+        width: 200px;
+        margin-bottom: 20px;
+    }
+    
+    nav > form > p > button {
+        display: inline-block;
+        width: 220px;
+    }
+    
+    main {
+        width: 600px;
+        height: 90vh;
+        display: inline-block;
+        position: absolute;
+        left: 50%;
+        top: 77px;
+        transform: translateX(-30%);
+    }
+    
+    main > section > form {
+        padding-top: 0px;
+    }
+    
+    main > section > form > h4 {
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+    
+    section {
+        width: 600px;
+        height: 100px;
+        display: inline-block;
+        position: absolute;
+        top: 15%;
+        left: 60%;
+        transform: translate(-50%, -50%);
+    }
+    
+}
+

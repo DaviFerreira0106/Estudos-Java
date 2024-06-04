@@ -1,0 +1,145 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 10 de abr. de 2024, 11:29:44
+    Author     : daviferreira
+*/
+
+@charset "UTF-8";
+
+/*Criação de Variaveis na raiz das folhas de Estilo*/
+:root{
+    --cor0: #DFEBF2;
+    --cor1: #99B1BF;
+    --cor2: #356B8C;
+    --cor3: #396273;
+    --cor4: #0D3140;
+    
+    --font-padrao: Arial, Helvetica, Verdana, sans-serif;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: var(--font-padrao);
+}
+
+body {
+    background-color: var(--cor0);
+}
+
+header {
+    background-color: var(--cor2);
+    color: var(--cor0);
+    text-align: center;
+    padding: 10px;
+    box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.3);
+}
+
+main {
+    width: 100vw;
+    background-color: var(--cor0);
+    padding-top: 20px;
+}
+
+h2#legenda {
+    color: var(--cor2);
+    display: block;
+    width: 350px;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+main > form > p > label {
+    display: none;
+}
+
+main > form > p > input {
+    display: block;
+    width: 50vw;
+    height: 35px;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    transform: translateX(50%)
+}
+
+button#btnOperacao {
+    display: none;
+}
+
+form#pesquisa {
+    padding: 20px;
+    margin-bottom: 40px;
+}
+
+div#linha {
+    margin-top: 50px;
+    padding-top: 20px;
+    display: block;
+}
+
+div#dados {
+    display: block;
+}
+
+div#linha > form > div#dados > p > input#codigo {
+    margin: 10px;
+    height: 20px;
+    width: 130px;
+    border-radius: 10px;
+    display: block;
+    margin: auto;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+div#imagem {
+    width: 200px;
+    height: 300px;
+    background-color: lightgray;
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+img#image {
+    width: 200px;
+    height: 300px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+input#buttonExcluir {
+    display: block;
+    height: 35px;
+    width: 130px;
+    font-size: 1em;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+input#buttonExcluir:hover {
+    background-color: var(--cor4);
+    color: var(--cor0);
+}
+
+img#imagem_sem_cadastro {
+    display: block;
+    background-position: center;
+    margin: auto;
+    padding-top: 50px;
+}
+
+div#imagem_sem_cadastro {
+    width: 79vw;
+    height: 350px;
+    margin: auto;
+    background-color: white;
+    border-radius: 10px; 
+    
+    
+}

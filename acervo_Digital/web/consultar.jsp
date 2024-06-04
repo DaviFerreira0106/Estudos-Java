@@ -36,13 +36,13 @@
                     <img id="image" src="fotos/<% out.println(objLivro.getImagem());%>"> 
                 </div>
                 <div id="informacoes">
-
-                    <p class="dados" id="nomeLivro">
-                        Nome do Livro: <% out.println(objLivro.getTitulo()); %>
+                    
+                    <p class="dados" id="precoLivro">
+                        Preço: <% out.println(objLivro.getPreco()); %>
                     </p>
                     
-                    <p class="dados" id="preco">
-                        Nome do Livro: <% out.println(objLivro.getPreco()); %>
+                    <p class="dados" id="nomeLivro">
+                        Nome do Livro: <% out.println(objLivro.getTitulo()); %>
                     </p>
 
                     <p class="dados" id="autor">
